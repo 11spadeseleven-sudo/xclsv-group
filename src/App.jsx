@@ -392,6 +392,21 @@ function Header() {
 function Hero() {
   return (
     <section className="hero" id="top">
+      <video
+        className="hero-background-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={imagery.hero}
+        aria-hidden="true"
+        disablePictureInPicture
+      >
+        <source src={imagery.showcaseVideo} type="video/mp4" />
+      </video>
+      <div className="hero-background-overlay" aria-hidden="true" />
+
       <div className="shell hero-grid">
         <div className="hero-copy">
           <div className="eyebrow"><span /> Property management. Built around the asset.</div>
