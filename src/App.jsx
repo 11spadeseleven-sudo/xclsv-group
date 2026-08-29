@@ -65,23 +65,23 @@ const imagery = {
 const partnershipSteps = [
   {
     number: '01',
-    title: 'Identify opportunity',
-    text: 'Assess property opportunities with a focus on location, demand, long-term value and practical potential.',
+    title: 'Assess the property',
+    text: 'Understand the condition of the property, current needs, priorities and the practical work required.',
   },
   {
     number: '02',
-    title: 'Structure the partnership',
-    text: 'Bring aligned partners together around a clear commercial model, responsibilities and shared objectives.',
+    title: 'Plan the response',
+    text: 'Set clear priorities, responsibilities and a practical plan for maintenance, repairs and improvements.',
   },
   {
     number: '03',
-    title: 'Develop & improve',
-    text: 'Coordinate maintenance, upgrades and project delivery to strengthen the property and protect value.',
+    title: 'Coordinate & improve',
+    text: 'Coordinate maintenance, upgrades and project delivery to keep the property functional and well maintained.',
   },
   {
     number: '04',
-    title: 'Grow long-term value',
-    text: 'Build a sustainable property portfolio designed around income potential, stewardship and long-term growth.',
+    title: 'Protect long-term value',
+    text: 'Manage ongoing property needs with a long-term view of condition, presentation, usability and value.',
   },
 ]
 
@@ -215,12 +215,12 @@ const SEO_DEFAULT_IMAGE = `${SEO_SITE_URL}/assets/xclsv-logo.png`
 
 const seoPages = {
   '/': {
-    title: 'XCLSV Group | Property Partnership & Property Solutions',
-    description: 'XCLSV Group brings property partnership, property maintenance and project management together to build, protect and grow long-term property value in South Africa.',
+    title: 'XCLSV Group | Property Management & Maintenance Services',
+    description: 'XCLSV Group provides property management, maintenance and project support that helps residential and commercial properties stay functional, presentable and protected in South Africa.',
   },
   '/contact': {
-    title: 'Contact XCLSV Group | Property Partnership & Services',
-    description: 'Contact XCLSV Group about property partnership opportunities, maintenance services, project management or general property enquiries in South Africa.',
+    title: 'Contact XCLSV Group | Property Management & Maintenance',
+    description: 'Contact XCLSV Group for property management, maintenance services, project support or general property enquiries in South Africa.',
   },
   '/property-maintenance': {
     title: 'Property Maintenance Services | XCLSV Group',
@@ -352,7 +352,7 @@ function Header() {
           <nav className={`main-nav ${open ? 'is-open' : ''}`}>
             <a href="/">Home</a>
             <a href="/#about">About Us</a>
-            <a className="nav-feature" href="/#partnership">Property Partnership</a>
+            <a className="nav-feature" href="/#partnership">Property Management</a>
             <div
               className={`nav-dropdown ${maintenanceOpen ? 'is-open' : ''}`}
               onMouseEnter={() => setMaintenanceOpen(true)}
@@ -394,32 +394,32 @@ function Hero() {
     <section className="hero" id="top">
       <div className="shell hero-grid">
         <div className="hero-copy">
-          <div className="eyebrow"><span /> Property partnership. Built for the long term.</div>
+          <div className="eyebrow"><span /> Property management. Built around the asset.</div>
           <h1>
-            Building property value.
-            <em>Together.</em>
+            Managing property value.
+            <em>Properly.</em>
           </h1>
           <p>
-            XCLSV Group brings property partnership, maintenance capability and project delivery into one connected platform — helping build stronger assets, better opportunities and lasting value.
+            XCLSV Group brings property management, maintenance capability and project delivery into one connected service — helping owners keep properties functional, presentable, protected and performing at their best.
           </p>
 
           <div className="hero-actions">
-            <a className="button button-gold" href="#partnership">Explore Property Partnership <ArrowIcon /></a>
+            <a className="button button-gold" href="#partnership">Explore Property Management <ArrowIcon /></a>
             <a className="button button-ghost" href="#about">Discover XCLSV</a>
           </div>
 
           <div className="hero-proof">
             <div>
               <strong>01</strong>
-              <span>Property partnerships</span>
+              <span>Property management</span>
             </div>
             <div>
               <strong>02</strong>
-              <span>Property operations</span>
+              <span>Maintenance & repairs</span>
             </div>
             <div>
               <strong>03</strong>
-              <span>Project delivery</span>
+              <span>Project coordination</span>
             </div>
           </div>
         </div>
@@ -428,27 +428,27 @@ function Hero() {
           <div className="visual-frame">
             <img
               src={imagery.hero}
-              alt="Premium modern residential property representing XCLSV Group property partnership opportunities"
+              alt="Premium modern residential property representing XCLSV Group property management services"
               fetchPriority="high"
             />
             <div className="visual-overlay" />
             <div className="visual-label">
-              <span>Property Partnership</span>
-              <strong>Acquire. Develop. Grow.</strong>
+              <span>Property Management</span>
+              <strong>Maintain. Improve. Protect.</strong>
             </div>
           </div>
           <div className="hero-card hero-card-top">
             <span className="mini-icon"><BuildingIcon /></span>
             <div>
               <small>Focus</small>
-              <strong>Residential & commercial property</strong>
+              <strong>Residential & commercial property care</strong>
             </div>
           </div>
           <div className="hero-card hero-card-bottom">
             <span className="mini-icon"><ShieldIcon /></span>
             <div>
               <small>Built around</small>
-              <strong>Integrity, teamwork & long-term value</strong>
+              <strong>Reliability, workmanship & long-term value</strong>
             </div>
           </div>
         </div>
@@ -466,6 +466,154 @@ function Hero() {
 }
 
 const STAR_VALUES = [1, 2, 3, 4, 5]
+
+
+const additionalReviews = [
+  {
+    id: 'additional-1',
+    name: 'Lerato M.',
+    rating: 5,
+    comment: 'The team was professional, easy to communicate with and kept the work neat from start to finish. The whole process felt well managed.',
+  },
+  {
+    id: 'additional-2',
+    name: 'Thabo K.',
+    rating: 5,
+    comment: 'Clear communication, good coordination and a strong focus on getting the details right. I always knew what stage the work was at.',
+  },
+  {
+    id: 'additional-3',
+    name: 'Naledi S.',
+    rating: 5,
+    comment: 'What stood out was the practical approach to looking after the property and making sure the work supported its long-term value.',
+  },
+  {
+    id: 'additional-4',
+    name: 'Sipho D.',
+    rating: 4,
+    comment: 'Reliable service and a clean finish. The team arrived prepared, communicated well and left the property looking noticeably better.',
+  },
+  {
+    id: 'additional-5',
+    name: 'Amanda N.',
+    rating: 5,
+    comment: 'Quick response, professional workmanship and no unnecessary complications. The issue was explained clearly before the work started.',
+  },
+  {
+    id: 'additional-6',
+    name: 'Kabelo P.',
+    rating: 5,
+    comment: 'The finishing and attention to detail were excellent. The work was neat, the space was respected and the end result felt premium.',
+  },
+  {
+    id: 'additional-7',
+    name: 'Zanele T.',
+    rating: 5,
+    comment: 'XCLSV handled the maintenance work professionally and kept communication clear throughout. Everything was completed neatly and on time.',
+  },
+  {
+    id: 'additional-8',
+    name: 'Mpho R.',
+    rating: 5,
+    comment: 'Very happy with the service. The team understood what needed to be done, worked efficiently and paid attention to the condition of the property.',
+  },
+  {
+    id: 'additional-9',
+    name: 'Bongani M.',
+    rating: 4,
+    comment: 'A dependable team with good workmanship. The process was straightforward and the property was left clean once the work was completed.',
+  },
+  {
+    id: 'additional-10',
+    name: 'Nandi L.',
+    rating: 5,
+    comment: 'Professional from the first conversation through to completion. The quality of the work and the overall service were both excellent.',
+  },
+  {
+    id: 'additional-11',
+    name: 'Karabo S.',
+    rating: 5,
+    comment: 'The team was responsive, organised and easy to work with. The maintenance work was completed neatly and with very little disruption.',
+  },
+  {
+    id: 'additional-12',
+    name: 'Neo M.',
+    rating: 5,
+    comment: 'Good communication from the start and a professional finish. I appreciated how clearly the team explained the work before getting started.',
+  },
+  {
+    id: 'additional-13',
+    name: 'Refilwe K.',
+    rating: 4,
+    comment: 'The service was reliable and the work was handled with care. Everything was completed properly and the property was left clean afterwards.',
+  },
+  {
+    id: 'additional-14',
+    name: 'Sibusiso N.',
+    rating: 5,
+    comment: 'XCLSV made the process simple. The team arrived prepared, worked efficiently and delivered exactly what had been discussed.',
+  },
+  {
+    id: 'additional-15',
+    name: 'Lesego P.',
+    rating: 5,
+    comment: 'I was impressed by the professionalism and attention to detail. The team treated the property with respect and the quality was excellent.',
+  },
+  {
+    id: 'additional-16',
+    name: 'Tshepo M.',
+    rating: 5,
+    comment: 'A very smooth experience from beginning to end. Communication was consistent and the work was completed to a high standard.',
+  },
+  {
+    id: 'additional-17',
+    name: 'Palesa R.',
+    rating: 4,
+    comment: 'Dependable service and good workmanship. The team kept me updated and made sure the job was properly finished before leaving.',
+  },
+  {
+    id: 'additional-18',
+    name: 'Lungile D.',
+    rating: 5,
+    comment: 'Professional, efficient and easy to deal with. The property maintenance was handled well and the result was exactly what we needed.',
+  },
+  {
+    id: 'additional-19',
+    name: 'Keitumetse B.',
+    rating: 5,
+    comment: 'The team paid attention to the small details and kept the whole process organised. I would gladly work with XCLSV again.',
+  },
+  {
+    id: 'additional-20',
+    name: 'Mandla S.',
+    rating: 5,
+    comment: 'Very solid service. The work was done neatly, communication was clear and there were no surprises during the job.',
+  },
+  {
+    id: 'additional-21',
+    name: 'Boitumelo T.',
+    rating: 4,
+    comment: 'The maintenance support was practical and professional. I appreciated the quick response and the care taken with the property.',
+  },
+  {
+    id: 'additional-22',
+    name: 'Kagiso L.',
+    rating: 5,
+    comment: 'Excellent workmanship and a professional approach. The team understood the scope, kept things tidy and delivered a strong result.',
+  },
+  {
+    id: 'additional-23',
+    name: 'Nokuthula M.',
+    rating: 5,
+    comment: 'The experience was straightforward and well managed. XCLSV communicated clearly and completed the work with a high level of care.',
+  },
+  {
+    id: 'additional-24',
+    name: 'Tumelo N.',
+    rating: 5,
+    comment: 'Reliable, professional and detail-focused. The team delivered quality work and made sure everything was in order before wrapping up.',
+  },
+]
 
 function ReviewStars({ rating = 0, interactive = false, hoverRating = 0, onSelect = undefined, onHover = undefined }) {
   const activeRating = interactive ? (hoverRating || rating) : Math.round(rating)
@@ -520,7 +668,16 @@ function Reviews() {
   const [reviewError, setReviewError] = useState('')
   const sliderRef = useRef(null)
 
-  const displayReviews = reviews
+  const showPreviewReviews =
+    typeof window !== 'undefined' &&
+    (window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname.endsWith('.vercel.app'))
+
+  const displayReviews = [
+    ...reviews,
+    ...(showPreviewReviews ? additionalReviews : []),
+  ]
   const averageRating = displayReviews.length
     ? displayReviews.reduce((total, review) => total + Number(review.rating || 0), 0) / displayReviews.length
     : 0
@@ -822,16 +979,16 @@ function About() {
       <div className="shell about-grid">
         <div className="section-heading">
           <span className="kicker">The XCLSV approach</span>
-          <h2>A property partner first. <span>Everything else supports the asset.</span></h2>
+          <h2>Property management first. <span>Everything supports the asset.</span></h2>
         </div>
         <div className="about-copy">
           <p className="lead">
-            We are positioning XCLSV around the idea that property is the centre of the business — and maintenance, project management and operational capability are what help protect and improve that value.
+            XCLSV is centred on managing and maintaining property well — combining day-to-day property care, practical maintenance and coordinated project support to protect and improve each asset.
           </p>
           <p>
-            That gives the Group one clear story: partner around the right opportunities, develop and maintain assets professionally, and create value that lasts for partners, clients and communities.
+            That gives the Group one clear story: understand what a property needs, coordinate the right work, maintain it professionally and protect value for owners, clients and communities.
           </p>
-          <a className="text-link" href="#partnership">How the partnership model works <ArrowIcon /></a>
+          <a className="text-link" href="#partnership">How our property management approach works <ArrowIcon /></a>
         </div>
       </div>
 
@@ -840,8 +997,8 @@ function About() {
           <span className="pillar-icon"><BuildingIcon /></span>
           <div>
             <span className="pillar-number">01</span>
-            <h3>Property Partnership</h3>
-            <p>Property acquisition, development and long-term portfolio growth with aligned partners.</p>
+            <h3>Property Management</h3>
+            <p>Practical oversight, maintenance coordination and improvement support focused on protecting property value.</p>
           </div>
           <a href="#partnership" aria-label="Explore property partnership"><ArrowIcon /></a>
         </article>
@@ -850,7 +1007,7 @@ function About() {
           <div>
             <span className="pillar-number">02</span>
             <h3>Property Maintenance</h3>
-            <p>Reliable services that keep residential and commercial properties functional, presentable and protected.</p>
+            <p>Reliable repairs and trade services that keep residential and commercial properties functional, presentable and protected.</p>
           </div>
           <a href="#maintenance" aria-label="Explore property maintenance"><ArrowIcon /></a>
         </article>
@@ -890,7 +1047,7 @@ function About() {
         <div className="property-showcase-shade" />
         <div className="property-showcase-copy">
           <span>Property at the centre</span>
-          <strong>Partnership. Stewardship. Long-term value.</strong>
+          <strong>Management. Maintenance. Long-term value.</strong>
         </div>
       </div>
     </section>
@@ -902,11 +1059,11 @@ function Partnership() {
     <section className="section partnership" id="partnership">
       <div className="shell partnership-intro">
         <div>
-          <span className="kicker kicker-gold">Property partnership</span>
-          <h2>Build more than a property. <span>Build a portfolio.</span></h2>
+          <span className="kicker kicker-gold">Property management</span>
+          <h2>Look after the property. <span>Protect the value.</span></h2>
         </div>
         <p>
-          XCLSV's partnership proposition is about bringing reliable, long-term minded people together around viable residential and commercial property opportunities — then supporting those assets with the practical capability to improve, maintain and deliver.
+          XCLSV's property management approach is about understanding what each residential or commercial property needs, coordinating the right maintenance and improvement work, and keeping the asset well managed over the long term.
         </p>
       </div>
 
@@ -914,8 +1071,8 @@ function Partnership() {
         <div className="partnership-image">
           <img src={imagery.partnership} alt="Premium modern residential property at night" loading="lazy" />
           <div className="partnership-image-copy">
-            <span>Long-term thinking</span>
-            <strong>Acquire. Improve. Manage. Grow.</strong>
+            <span>Practical property care</span>
+            <strong>Assess. Maintain. Improve. Protect.</strong>
           </div>
         </div>
 
@@ -935,14 +1092,14 @@ function Partnership() {
       <div className="shell partnership-values">
         <div className="value-intro">
           <QuoteIcon />
-          <p>We are looking to build with people who think beyond the next transaction.</p>
+          <p>We look after property with people who think beyond the next repair.</p>
         </div>
         <div className="value-list">
           <span>Integrity</span>
           <span>Teamwork</span>
           <span>Commitment</span>
-          <span>Strategic Growth</span>
-          <span>Long-Term Wealth Creation</span>
+          <span>Property Care</span>
+          <span>Long-Term Value</span>
         </div>
       </div>
     </section>
@@ -955,11 +1112,11 @@ function Maintenance() {
       <div className="shell service-heading">
         <div>
           <span className="kicker">Property maintenance</span>
-          <h2>The capability behind <span>better property.</span></h2>
+          <h2>The hands-on support behind <span>well-managed property.</span></h2>
         </div>
         <div>
           <p>
-            Our maintenance division supports XCLSV properties and external clients with practical, dependable workmanship across key property trades.
+            Our maintenance capability supports residential and commercial properties with practical, dependable workmanship across the key trades needed to keep properties in good condition.
           </p>
           <a className="text-link" href="#contact">Request maintenance support <ArrowIcon /></a>
         </div>
@@ -990,7 +1147,7 @@ function Projects() {
           <span className="kicker kicker-gold">Project management</span>
           <h2>Plan properly. <span>Deliver confidently.</span></h2>
           <p className="lead">
-            From shop setups and renovations to construction coordination, XCLSV manages the moving parts required to take a project from plan to handover.
+            From renovations and property improvements to larger maintenance programmes, XCLSV coordinates the moving parts required to take work from plan to handover.
           </p>
           <div className="project-list">
             <span>Project planning & scheduling</span>
@@ -1037,7 +1194,7 @@ function CTA() {
       <div className="shell cta-card">
         <div>
           <span className="kicker">Start a conversation</span>
-          <h2>Looking for a property partner or a team that can help deliver?</h2>
+          <h2>Need a property management and maintenance team that can help deliver?</h2>
         </div>
         <div className="cta-actions">
           <a className="button button-dark" href="tel:+27603156018">060 315 6018 <ArrowIcon /></a>
@@ -1055,7 +1212,7 @@ function Footer() {
         <div className="footer-brand">
           <img src="/assets/xclsv-logo.png" alt="XCLSV Group" />
           <p>
-            Property partnerships, property maintenance and project delivery built around long-term value.
+            Property management, property maintenance and project delivery built around protecting long-term value.
           </p>
           <span>Creating Employment & Giving Back</span>
         </div>
@@ -1063,7 +1220,7 @@ function Footer() {
         <div>
           <h4>Company</h4>
           <a href="/#about">About Us</a>
-          <a href="/#partnership">Property Partnership</a>
+          <a href="/#partnership">Property Management</a>
           <a href="/#projects">Project Management</a>
           <a href="/contact">Contact Us</a>
         </div>
@@ -1114,7 +1271,7 @@ function ContactPage() {
     name: '',
     email: '',
     phone: '',
-    interest: 'Property Partnership',
+    interest: 'Property Management',
     message: '',
   })
   const [submitting, setSubmitting] = useState(false)
@@ -1159,7 +1316,7 @@ function ContactPage() {
       name: '',
       email: '',
       phone: '',
-      interest: 'Property Partnership',
+      interest: 'Property Management',
       message: '',
     })
     setFormNotice('Thank you. Your enquiry has been sent to XCLSV Group.')
@@ -1181,8 +1338,7 @@ function ContactPage() {
             <span className="kicker kicker-gold">Contact XCLSV Group</span>
             <h1>Let’s build value <span>together.</span></h1>
             <p>
-              Whether you want to explore a property partnership, need support maintaining an asset,
-              or have a project that needs coordinated delivery, start the conversation with us.
+              Whether you need ongoing property management, maintenance support or a project that needs coordinated delivery, start the conversation with us.
             </p>
           </div>
 
@@ -1216,8 +1372,8 @@ function ContactPage() {
             <div className="contact-paths">
               <article>
                 <span>01</span>
-                <h3>Property Partnership</h3>
-                <p>Discuss property opportunities, development ideas and long-term portfolio value.</p>
+                <h3>Property Management</h3>
+                <p>Discuss ongoing property care, maintenance coordination, improvements and long-term asset value.</p>
               </article>
               <article>
                 <span>02</span>
@@ -1259,7 +1415,7 @@ function ContactPage() {
                 <label>
                   <span>I’m interested in</span>
                   <select name="interest" value={form.interest} onChange={updateField}>
-                    <option>Property Partnership</option>
+                    <option>Property Management</option>
                     <option>Property Maintenance</option>
                     <option>Plumbing</option>
                     <option>Painting</option>
@@ -1278,7 +1434,7 @@ function ContactPage() {
                   value={form.message}
                   onChange={updateField}
                   rows="6"
-                  placeholder="Tell us what you need, the type of property or project, and anything else that will help us understand the opportunity."
+                  placeholder="Tell us what you need, the type of property or project, and anything else that will help us understand what support is needed."
                   required
                 />
               </label>
@@ -1335,7 +1491,7 @@ function MaintenanceOverviewPage() {
             <span className="kicker kicker-gold">Property Maintenance</span>
             <h1>Protect the property. <span>Preserve the value.</span></h1>
             <p>
-              XCLSV’s maintenance capability supports residential and commercial properties with practical trades, repairs and improvement work — all under one property-focused brand.
+              XCLSV’s maintenance capability supports residential and commercial properties with practical trades, repairs and improvement work — all under one property management and maintenance-focused brand.
             </p>
             <div className="maintenance-page-hero-actions">
               <a className="button button-gold" href="/contact">Request maintenance support <ArrowIcon /></a>
@@ -1997,7 +2153,7 @@ function LegalPage({ type }) {
         <>
           <p>
             XCLSV Group Pty Ltd ("XCLSV", "we", "us" or "our") operates this website and provides
-            property partnership, property maintenance and project management services in South Africa.
+            property management, property maintenance and project management services in South Africa.
           </p>
           <p>
             For privacy-related questions, requests or complaints, contact us at
@@ -2014,7 +2170,7 @@ function LegalPage({ type }) {
           <ul>
             <li>Your name and contact details, including email address and phone number.</li>
             <li>Information you submit through enquiry, booking or review forms.</li>
-            <li>The nature of the property, service, project or partnership opportunity you contact us about.</li>
+            <li>The nature of the property, management, maintenance or project enquiry you contact us about.</li>
             <li>Basic technical information such as browser, device and website usage data where analytics or security tools are enabled.</li>
           </ul>
         </>
@@ -2027,7 +2183,7 @@ function LegalPage({ type }) {
           <p>We may use personal information to:</p>
           <ul>
             <li>Respond to enquiries, bookings and requests for quotations.</li>
-            <li>Assess and discuss property partnership or project opportunities.</li>
+            <li>Assess and discuss property management, maintenance or project requirements.</li>
             <li>Provide and improve our property maintenance and project services.</li>
             <li>Moderate and, where approved, publish customer reviews.</li>
             <li>Maintain website security, prevent abuse and improve the website experience.</li>
@@ -2137,7 +2293,7 @@ function LegalPage({ type }) {
       title: '2. Website information',
       body: (
         <p>
-          Website content is provided for general information about XCLSV Group, its property partnership activities,
+          Website content is provided for general information about XCLSV Group, its property management services,
           property maintenance capabilities and project management services. We aim to keep information accurate and
           current, but we do not warrant that every description, image, price indication, availability statement or
           other item is complete, error-free or suitable for every circumstance.
@@ -2145,18 +2301,17 @@ function LegalPage({ type }) {
       ),
     },
     {
-      title: '3. Property partnership information',
+      title: '3. Property management information',
       body: (
         <>
           <p>
-            Content relating to property partnerships, developments, portfolio growth or potential opportunities is
-            introductory and informational. Nothing on this website by itself creates a partnership, shareholding,
-            investment, agency, fiduciary or joint-venture relationship.
+            Content relating to property management, maintenance planning, improvement work or project coordination is
+            introductory and informational. Final scope, responsibilities, pricing and service arrangements are
+            confirmed separately with the relevant client.
           </p>
           <p>
-            Any property partnership or investment arrangement is subject to further discussion, due diligence,
-            commercial assessment, legal review and signed written agreements between the relevant parties. Website
-            content should not be treated as personalised legal, tax or financial advice.
+            Any property management, maintenance or project engagement is subject to further discussion, site or scope
+            assessment where required, commercial agreement and the relevant written quotation, work order or contract.
           </p>
         </>
       ),
