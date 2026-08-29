@@ -1,0 +1,21 @@
+{
+  "name": "XCLSV Group",
+  "short_name": "XCLSV",
+  "description": "Property partnership, property maintenance and project management.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09111e",
+  "theme_color": "#09111e",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
