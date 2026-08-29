@@ -4515,3 +4515,25 @@ svg {
     flex-direction: column;
   }
 }
+
+
+/* Anchor navigation — keep sections clear of the sticky header */
+#reviews,
+#about,
+#partnership,
+#maintenance,
+#projects,
+#contact {
+  scroll-margin-top: 96px;
+}
+
+@media (max-width: 900px) {
+  #reviews,
+  #about,
+  #partnership,
+  #maintenance,
+  #projects,
+  #contact {
+    scroll-margin-top: 86px;
+  }
+}

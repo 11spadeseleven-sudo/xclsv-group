@@ -2324,12 +2324,57 @@ function WhatsAppButton() {
   )
 }
 
+
+function useHashNavigation(path) {
+  useEffect(() => {
+    if (path !== '/') return undefined
+
+    let timer
+
+    const scrollToCurrentHash = () => {
+      const rawHash = window.location.hash
+      if (!rawHash) return
+
+      const id = decodeURIComponent(rawHash.slice(1))
+      let attempts = 0
+
+      const findAndScroll = () => {
+        const target = document.getElementById(id)
+
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+          return
+        }
+
+        attempts += 1
+        if (attempts < 12) {
+          timer = window.setTimeout(findAndScroll, 50)
+        }
+      }
+
+      timer = window.setTimeout(findAndScroll, 0)
+    }
+
+    scrollToCurrentHash()
+    window.addEventListener('hashchange', scrollToCurrentHash)
+
+    return () => {
+      window.removeEventListener('hashchange', scrollToCurrentHash)
+      if (timer) window.clearTimeout(timer)
+    }
+  }, [path])
+}
+
 export default function App() {
   const path = typeof window !== 'undefined'
     ? (window.location.pathname.replace(/\/+$/, '') || '/')
     : '/'
 
   usePageSeo(path)
+  useHashNavigation(path)
 
   if (path === '/admin' || path === '/admin/reviews') {
     return <AdminPage />
