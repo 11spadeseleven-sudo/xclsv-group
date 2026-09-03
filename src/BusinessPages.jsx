@@ -9,7 +9,6 @@ const ArrowIcon = () => (
 const businessServices = {
   '/business-investments': {
     label: 'Business Investments',
-    kicker: 'Business Investments',
     title: <>Building opportunities with <span>long-term potential.</span></>,
     intro: 'XCLSV Group explores and supports business opportunities with a practical focus on growth, sustainability and value creation.',
     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -22,7 +21,6 @@ const businessServices = {
   },
   '/business-management': {
     label: 'Business Management',
-    kicker: 'Business Management',
     title: <>Practical management for <span>businesses that want to grow.</span></>,
     intro: 'XCLSV provides practical business management support focused on organisation, coordination, performance and sustainable growth.',
     image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -35,7 +33,6 @@ const businessServices = {
   },
   '/project-management': {
     label: 'Project Management',
-    kicker: 'Project Management',
     title: <>From planning to completion, <span>keep the project moving.</span></>,
     intro: 'XCLSV coordinates projects with a clear focus on planning, communication, timelines, resources and delivery.',
     image: 'https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -48,7 +45,6 @@ const businessServices = {
   },
   '/real-estates': {
     label: 'Real Estates',
-    kicker: 'Real Estate',
     title: <>Property opportunities with a focus on <span>practical value.</span></>,
     intro: 'XCLSV supports real estate activities with a practical understanding of property condition, improvement, management and long-term value.',
     image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -61,7 +57,6 @@ const businessServices = {
   },
   '/events': {
     label: 'Events',
-    kicker: 'Events',
     title: <>Events planned with <span>purpose and precision.</span></>,
     intro: 'XCLSV supports events through practical planning, coordination and delivery, helping bring the right people, services and details together.',
     image: 'https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -74,7 +69,6 @@ const businessServices = {
   },
   '/catering-services': {
     label: 'Catering Services',
-    kicker: 'Catering Services',
     title: <>Food and service that make <span>every occasion count.</span></>,
     intro: 'XCLSV provides catering support for business functions, private occasions and events, with a focus on reliable service and a professional presentation.',
     image: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1600',
