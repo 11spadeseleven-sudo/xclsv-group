@@ -56,11 +56,11 @@ const WhatsAppIcon = () => (
 )
 
 const imagery = {
-  hero: 'public/assets/titling_.jpg',
+  hero: '/assets/titling_.jpg',
   showcase: 'https://images.pexels.com/photos/28586202/pexels-photo-28586202.jpeg?auto=compress&cs=tinysrgb&w=1800',
   showcaseVideo: 'https://videos.pexels.com/video-files/37544730/15908990_1920_1080_30fps.mp4',
-  partnership: 'public/assets/01-painting-worker.jpg',
-  project: 'public/assets/maintenance_.jpg',
+  partnership: '/assets/01-painting-worker.jpg',
+  project: '/assets/maintenance_.jpg',
 }
 
 const partnershipSteps = [
@@ -90,7 +90,7 @@ const maintenanceServices = [
   {
     slug: 'plumbing',
     title: 'Plumbing',
-    image: '../public/assets/plumbing_.png',
+    image: '/assets/plumbing_.png',
     position: '52% 50%',
     summary: 'Responsive plumbing repairs, installations and maintenance that help protect the property behind the problem.',
     heroTitle: 'Proffessional plubming services.',
@@ -107,7 +107,7 @@ const maintenanceServices = [
   {
     slug: 'tiling',
     title: 'Tiling',
-    image: '../public/assets/titling_.jpg',
+    image: '/assets/titling_.jpg',
     position: '58% 50%',
     summary: 'Clean, durable tiling work for floors, walls, bathrooms, kitchens and outdoor spaces.',
     heroTitle: 'Quality tiling that transforms spaces.',
@@ -124,7 +124,7 @@ const maintenanceServices = [
   {
     slug: 'painting',
     title: 'Painting',
-    image: '../public/assets/01-painting-worker.jpg',
+    image: '/assets/01-painting-worker.jpg',
     position: '56% 50%',
     summary: 'Interior and exterior painting with the preparation and finishing needed for a cleaner, longer-lasting result.',
     heroTitle: 'Painting that refreshes spaces and protects value.',
