@@ -2516,7 +2516,7 @@ function WhatsAppButton() {
   return (
     <a
       className="whatsapp-float"
-      href={`https://wa.me/27603156018?text=${message}`}
+      href={`https://wa.me/27502139159?text=${message}`}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with XCLSV Group on WhatsApp"
