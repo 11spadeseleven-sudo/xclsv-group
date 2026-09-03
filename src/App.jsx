@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { isSupabaseConfigured, supabase } from './supabaseClient'
+import { businessServices, BusinessServicePage } from './BusinessPages'
 
 const ArrowIcon = () => (
   <svg viewBox="0 0 20 20" aria-hidden="true">
@@ -55,11 +56,11 @@ const WhatsAppIcon = () => (
 )
 
 const imagery = {
-  hero: 'https://images.pexels.com/photos/10610731/pexels-photo-10610731.jpeg?auto=compress&cs=tinysrgb&w=1800',
+  hero: 'public/assets/titling_.jpg',
   showcase: 'https://images.pexels.com/photos/28586202/pexels-photo-28586202.jpeg?auto=compress&cs=tinysrgb&w=1800',
   showcaseVideo: 'https://videos.pexels.com/video-files/37544730/15908990_1920_1080_30fps.mp4',
-  partnership: 'https://images.pexels.com/photos/31737860/pexels-photo-31737860.jpeg?auto=compress&cs=tinysrgb&w=1400',
-  project: 'https://images.pexels.com/photos/29197533/pexels-photo-29197533.jpeg?auto=compress&cs=tinysrgb&w=1600',
+  partnership: 'public/assets/01-painting-worker.jpg',
+  project: 'public/assets/maintenance_.jpg',
 }
 
 const partnershipSteps = [
@@ -89,11 +90,10 @@ const maintenanceServices = [
   {
     slug: 'plumbing',
     title: 'Plumbing',
-    image: 'https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    image: '../public/assets/plumbing_.png',
     position: '52% 50%',
     summary: 'Responsive plumbing repairs, installations and maintenance that help protect the property behind the problem.',
-    eyebrow: 'Reliable property plumbing',
-    heroTitle: 'Plumbing that protects the property behind the problem.',
+    heroTitle: 'Proffessional plubming services.',
     intro: 'From urgent repairs to planned installations and ongoing maintenance, XCLSV provides practical plumbing support for residential and commercial properties.',
     services: [
       'Leak detection & repairs',
@@ -107,11 +107,10 @@ const maintenanceServices = [
   {
     slug: 'tiling',
     title: 'Tiling',
-    image: 'https://images.pexels.com/photos/29181494/pexels-photo-29181494.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    image: '../public/assets/titling_.jpg',
     position: '58% 50%',
     summary: 'Clean, durable tiling work for floors, walls, bathrooms, kitchens and outdoor spaces.',
-    eyebrow: 'Precision in every finish',
-    heroTitle: 'Tiling that adds finish, function and lasting value.',
+    heroTitle: 'Quality tiling that transforms spaces.',
     intro: 'XCLSV delivers well-prepared, carefully finished tiling work designed to improve both the appearance and usability of a space.',
     services: [
       'Floor tiling',
@@ -125,10 +124,9 @@ const maintenanceServices = [
   {
     slug: 'painting',
     title: 'Painting',
-    image: 'https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    image: '../public/assets/01-painting-worker.jpg',
     position: '56% 50%',
     summary: 'Interior and exterior painting with the preparation and finishing needed for a cleaner, longer-lasting result.',
-    eyebrow: 'Colour with a quality finish',
     heroTitle: 'Painting that refreshes spaces and protects value.',
     intro: 'Good painting starts before the first coat. XCLSV combines surface preparation, careful application and tidy delivery across residential and commercial properties.',
     services: [
@@ -146,8 +144,7 @@ const maintenanceServices = [
     image: 'https://images.pexels.com/photos/37442610/pexels-photo-37442610.jpeg?auto=compress&cs=tinysrgb&w=1400',
     position: '50% 50%',
     summary: 'Practical fabrication, repairs and steelwork for property access, safety, structure and improvement.',
-    eyebrow: 'Strong work. Solid solutions.',
-    heroTitle: 'Welding and fabrication built around practical property needs.',
+    heroTitle: 'Strong work. Solid solutions. Built to last.',
     intro: 'From repairs and installations to fabricated steel elements, XCLSV supports properties with dependable welding work suited to the job at hand.',
     services: [
       'Gate & fence manufacturing & repairs',
@@ -155,7 +152,7 @@ const maintenanceServices = [
       'Steel structures & fabrication',
       'General welding & repairs',
       'Maintenance & installations',
-      'Custom property steelwork',
+      'Strong workmanship & quality guaranteed.',
     ],
   },
 ]
@@ -183,7 +180,7 @@ function BookingModal({ open, onClose }) {
         <button className="booking-modal-close" type="button" onClick={onClose} aria-label="Close booking options">×</button>
         <span className="kicker kicker-gold">Book with XCLSV</span>
         <h2 id="booking-modal-title">How would you like to book?</h2>
-        <p>Choose the channel that suits you and we’ll continue the booking conversation there.</p>
+        <p>Choose the channel that suits you and we'll continue the booking conversation there.</p>
         <div className="booking-options">
           <a
             className="booking-option booking-option-whatsapp"
@@ -192,7 +189,7 @@ function BookingModal({ open, onClose }) {
             rel="noreferrer"
           >
             <span className="booking-option-icon"><WhatsAppIcon /></span>
-            <span><small>Fastest option</small><strong>Book via WhatsApp</strong><em>060 315 6018</em></span>
+            <span><small>Fastest option</small><strong>Book via WhatsApp</strong><em>+27 50 213 9159</em></span>
             <ArrowIcon />
           </a>
           <a
@@ -249,6 +246,30 @@ const seoPages = {
   '/terms': {
     title: 'Terms & Conditions | XCLSV Group',
     description: 'Read the terms governing use of the XCLSV Group website, property information, enquiries, bookings, reviews and services.',
+  },
+  '/business-investments': {
+    title: 'Business Investments | XCLSV Group',
+    description: 'Explore business investment opportunities and growth-focused support from XCLSV Group.',
+  },
+  '/business-management': {
+    title: 'Business Management | XCLSV Group',
+    description: 'Practical business management support focused on organisation, coordination and sustainable growth.',
+  },
+  '/project-management': {
+    title: 'Project Management | XCLSV Group',
+    description: 'Project planning, coordination and delivery support from XCLSV Group.',
+  },
+  '/real-estates': {
+    title: 'Real Estate | XCLSV Group',
+    description: 'Real estate support focused on practical property opportunities, improvement and long-term value.',
+  },
+  '/events': {
+    title: 'Events | XCLSV Group',
+    description: 'Event planning, coordination and delivery support from XCLSV Group.',
+  },
+  '/catering-services': {
+    title: 'Catering Services | XCLSV Group',
+    description: 'Professional catering support for business functions, private occasions and events.',
   },
 }
 
@@ -315,6 +336,11 @@ function Header() {
   const [maintenanceOpen, setMaintenanceOpen] = useState(false)
   const [bookingOpen, setBookingOpen] = useState(false)
 
+  // Get current path for active state
+  const path = typeof window !== 'undefined'
+    ? (window.location.pathname.replace(/\/+$/, '') || '/')
+    : '/'
+
   useEffect(() => {
     if (!bookingOpen) return undefined
     const previousOverflow = document.body.style.overflow
@@ -328,6 +354,17 @@ function Header() {
       document.body.style.overflow = previousOverflow
     }
   }, [bookingOpen])
+
+  const isActive = (href) => {
+    if (href === '/') return path === '/'
+    if (href === '/contact') return path === '/contact'
+    if (href === '/property-maintenance') return path === '/property-maintenance'
+    if (href.startsWith('/property-maintenance/')) {
+      return path.startsWith('/property-maintenance/')
+    }
+    // For business pages and other pages
+    return path === href
+  }
 
   return (
     <>
@@ -350,9 +387,8 @@ function Header() {
           </button>
 
           <nav className={`main-nav ${open ? 'is-open' : ''}`}>
-            <a href="/">Home</a>
-            <a href="/#about">About Us</a>
-            <a className="nav-feature" href="/#partnership">Property Management</a>
+            <a href="/" className={isActive('/') ? 'active' : ''}>Home</a>
+
             <div
               className={`nav-dropdown ${maintenanceOpen ? 'is-open' : ''}`}
               onMouseEnter={() => setMaintenanceOpen(true)}
@@ -360,28 +396,29 @@ function Header() {
             >
               <button
                 type="button"
+                className={path === '/property-maintenance' || path.startsWith('/property-maintenance/') ? 'active' : ''}
                 onClick={() => setMaintenanceOpen((value) => !value)}
               >
                 Property Maintenance <ChevronIcon />
               </button>
+
               <div className="dropdown-panel">
-                <a href="/property-maintenance">Overview</a>
-                <a href="/property-maintenance/plumbing">Plumbing</a>
-                <a href="/property-maintenance/tiling">Tiling</a>
-                <a href="/property-maintenance/painting">Painting</a>
-                <a href="/property-maintenance/welding">Welding</a>
+                <a href="/property-maintenance/plumbing" className={path === '/property-maintenance/plumbing' ? 'active' : ''}>Plumbing</a>
+                <a href="/property-maintenance/tiling" className={path === '/property-maintenance/tiling' ? 'active' : ''}>Tiling</a>
+                <a href="/property-maintenance/painting" className={path === '/property-maintenance/painting' ? 'active' : ''}>Painting</a>
+                <a href="/property-maintenance/welding" className={path === '/property-maintenance/welding' ? 'active' : ''}>Welding</a>
               </div>
             </div>
-            <a href="/#projects">Project Management</a>
-            <a href="/contact">Contact Us</a>
-            <button className="mobile-book-button" type="button" onClick={() => { setBookingOpen(true); setOpen(false) }}>
-              Book a Consultation <ArrowIcon />
-            </button>
-          </nav>
 
-          <button className="header-cta header-book-button" type="button" onClick={() => setBookingOpen(true)}>
-            Book a Consultation <ArrowIcon />
-          </button>
+            <a href="/business-investments" className={isActive('/business-investments') ? 'active' : ''}>Business Investments</a>
+            <a href="/business-management" className={isActive('/business-management') ? 'active' : ''}>Business Management</a>
+            <a href="/project-management" className={isActive('/project-management') ? 'active' : ''}>Project Management</a>
+            <a href="/real-estates" className={isActive('/real-estates') ? 'active' : ''}>Real Estates</a>
+            <a href="/events" className={isActive('/events') ? 'active' : ''}>Events</a>
+            <a href="/catering-services" className={isActive('/catering-services') ? 'active' : ''}>Catering Services</a>
+
+            <a href="/contact" className={isActive('/contact') ? 'active' : ''}>Contact Us</a>
+          </nav>
         </div>
       </header>
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
@@ -411,8 +448,7 @@ function Hero() {
         <div className="hero-copy">
           <div className="eyebrow"><span /> Property management. Built around the asset.</div>
           <h1>
-            Managing property value.
-            <em>Properly.</em>
+            We maintain. We improve. We add value.
           </h1>
           <p>
             XCLSV Group brings property management, maintenance capability and project delivery into one connected service — helping owners keep properties functional, presentable, protected and performing at their best.
@@ -470,9 +506,8 @@ function Hero() {
       </div>
 
       <div className="hero-bottom shell">
-        <span>Creating Employment</span>
+        <span>CREATING EMPLOYMENT AND GIVING BACK</span>
         <span className="hero-bottom-dot" />
-        <span>Giving Back</span>
         <span className="hero-bottom-line" />
         <span>South Africa</span>
       </div>
@@ -1193,7 +1228,7 @@ function Impact() {
         <div className="impact-mark">X</div>
         <div>
           <span className="kicker kicker-gold">Purpose beyond property</span>
-          <h2>Creating employment. <span>Giving back.</span></h2>
+          <h2>CREATING EMPLOYMENT AND GIVING BACK</h2>
         </div>
         <p>
           Growth should create opportunity. XCLSV is building a model where property, projects and service delivery can contribute to sustainable work and stronger communities.
@@ -1212,7 +1247,7 @@ function CTA() {
           <h2>Need a property management and maintenance team that can help deliver?</h2>
         </div>
         <div className="cta-actions">
-          <a className="button button-dark" href="tel:+27603156018">060 315 6018 <ArrowIcon /></a>
+          <a className="button button-dark" href="tel:+27603156018">+27 50 213 9159 <ArrowIcon /></a>
           <a className="button button-outline-dark" href="mailto:info@xclsvgroup.co.za">info@xclsvgroup.co.za</a>
         </div>
       </div>
@@ -1229,7 +1264,7 @@ function Footer() {
           <p>
             Property management, property maintenance and project delivery built around protecting long-term value.
           </p>
-          <span>Creating Employment & Giving Back</span>
+          <span>CREATING EMPLOYMENT AND GIVING BACK</span>
         </div>
 
         <div>
@@ -1242,7 +1277,6 @@ function Footer() {
 
         <div>
           <h4>Property Maintenance</h4>
-          <a href="/property-maintenance">Overview</a>
           <a href="/property-maintenance/plumbing">Plumbing</a>
           <a href="/property-maintenance/tiling">Tiling</a>
           <a href="/property-maintenance/painting">Painting</a>
@@ -1251,7 +1285,7 @@ function Footer() {
 
         <div>
           <h4>Contact</h4>
-          <a href="tel:+27603156018">060 315 6018</a>
+          <a href="tel:+27603156018">+27 50 213 9159</a>
           <a href="mailto:info@xclsvgroup.co.za">info@xclsvgroup.co.za</a>
           <span>South Africa</span>
         </div>
@@ -1351,7 +1385,7 @@ function ContactPage() {
         <div className="shell contact-hero-grid">
           <div className="contact-hero-copy">
             <span className="kicker kicker-gold">Contact XCLSV Group</span>
-            <h1>Let’s build value <span>together.</span></h1>
+            <h1>Let's build value <span>together.</span></h1>
             <p>
               Whether you need ongoing property management, maintenance support or a project that needs coordinated delivery, start the conversation with us.
             </p>
@@ -1361,7 +1395,7 @@ function ContactPage() {
             <span>Direct contact</span>
             <a href="tel:+27603156018">
               <span className="contact-icon"><PhoneIcon /></span>
-              <span><small>Call us</small><strong>060 315 6018</strong></span>
+              <span><small>Call us</small><strong>+27 50 213 9159</strong></span>
             </a>
             <a href="mailto:info@xclsvgroup.co.za">
               <span className="contact-icon"><MailIcon /></span>
@@ -1379,9 +1413,9 @@ function ContactPage() {
         <div className="shell contact-main-grid">
           <div className="contact-intro">
             <span className="kicker">Start a conversation</span>
-            <h2>Tell us what you’re looking to <span>build, improve or grow.</span></h2>
+            <h2>Tell us what you're looking to <span>build, improve or grow.</span></h2>
             <p>
-              Give us a little context and we’ll know which part of the XCLSV Group is best placed to help.
+              Give us a little context and we'll know which part of the XCLSV Group is best placed to help.
             </p>
 
             <div className="contact-paths">
@@ -1428,7 +1462,7 @@ function ContactPage() {
                   <input name="phone" value={form.phone} onChange={updateField} type="tel" placeholder="e.g. 082 000 0000" />
                 </label>
                 <label>
-                  <span>I’m interested in</span>
+                  <span>I'm interested in</span>
                   <select name="interest" value={form.interest} onChange={updateField}>
                     <option>Property Management</option>
                     <option>Property Maintenance</option>
@@ -1506,7 +1540,7 @@ function MaintenanceOverviewPage() {
             <span className="kicker kicker-gold">Property Maintenance</span>
             <h1>Protect the property. <span>Preserve the value.</span></h1>
             <p>
-              XCLSV’s maintenance capability supports residential and commercial properties with practical trades, repairs and improvement work — all under one property management and maintenance-focused brand.
+              XCLSV's maintenance capability supports residential and commercial properties with practical trades, repairs and improvement work — all under one property management and maintenance-focused brand.
             </p>
             <div className="maintenance-page-hero-actions">
               <a className="button button-gold" href="/contact">Request maintenance support <ArrowIcon /></a>
@@ -2143,7 +2177,7 @@ function NotFoundPage() {
           <div className="not-found-code" aria-hidden="true">404</div>
           <div className="not-found-copy">
             <span className="kicker kicker-gold">Page not found</span>
-            <h1>This property page <span>doesn’t exist.</span></h1>
+            <h1>This property page <span>doesn't exist.</span></h1>
             <p>
               The link may be outdated, the page may have moved, or the address may have been entered incorrectly.
             </p>
@@ -2456,7 +2490,7 @@ function LegalPage({ type }) {
             <span>{isPrivacy ? 'Privacy contact' : 'Company contact'}</span>
             <strong>XCLSV Group Pty Ltd.</strong>
             <a href="mailto:info@xclsvgroup.co.za">info@xclsvgroup.co.za</a>
-            <a href="tel:+27603156018">060 315 6018</a>
+            <a href="tel:+27603156018">+27 50 213 9159</a>
             <p>South Africa</p>
           </aside>
 
@@ -2555,6 +2589,8 @@ export default function App() {
     ? maintenanceServices.find((item) => item.slug === serviceMatch[1])
     : null
 
+  const businessService = businessServices[path] || null
+
   let page
   if (path === '/contact') {
     page = <ContactPage />
@@ -2566,6 +2602,8 @@ export default function App() {
     page = <MaintenanceOverviewPage />
   } else if (service) {
     page = <MaintenanceServicePage service={service} />
+  } else if (businessService) {
+    page = <BusinessServicePage service={businessService} />
   } else if (path === '/') {
     page = (
       <main>
