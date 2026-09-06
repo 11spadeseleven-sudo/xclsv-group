@@ -403,6 +403,7 @@ function Header() {
               </button>
 
               <div className="dropdown-panel">
+                <a href="/#partnership">Property Partnership</a>
                 <a href="/property-maintenance/plumbing" className={path === '/property-maintenance/plumbing' ? 'active' : ''}>Plumbing</a>
                 <a href="/property-maintenance/tiling" className={path === '/property-maintenance/tiling' ? 'active' : ''}>Tiling</a>
                 <a href="/property-maintenance/painting" className={path === '/property-maintenance/painting' ? 'active' : ''}>Painting</a>
