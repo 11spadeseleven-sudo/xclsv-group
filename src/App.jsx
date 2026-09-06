@@ -56,11 +56,11 @@ const WhatsAppIcon = () => (
 )
 
 const imagery = {
-  hero: '/assets/titling_.jpg',
+  hero: 'https://venkoproperty.co.nz/images/venko/blog/Tenant-Communication-Property-Management-Auckland.webp',
   showcase: 'https://images.pexels.com/photos/28586202/pexels-photo-28586202.jpeg?auto=compress&cs=tinysrgb&w=1800',
   showcaseVideo: 'https://videos.pexels.com/video-files/37544730/15908990_1920_1080_30fps.mp4',
-  partnership: '/assets/01-painting-worker.jpg',
-  project: '/assets/maintenance_.jpg',
+  partnership: 'https://lirp.cdn-website.com/12cc6e78/dms3rep/multi/opt/f1388a6e-3efe-4b12-9b41-48badcdaf4d1-1920w.jpg',
+  project: 'https://images.pexels.com/photos/29197533/pexels-photo-29197533.jpeg?auto=compress&cs=tinysrgb&w=1600',
 }
 
 const partnershipSteps = [
@@ -90,11 +90,11 @@ const maintenanceServices = [
   {
     slug: 'plumbing',
     title: 'Plumbing',
-    image: '/assets/plumbing_.png',
+    image: 'https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=1400',
     position: '52% 50%',
     summary: 'Responsive plumbing repairs, installations and maintenance that help protect the property behind the problem.',
     heroTitle: 'Proffessional plubming services.',
-    intro: 'From urgent repairs to planned installations and ongoing maintenance, XCLSV provides practical plumbing support for residential and commercial properties.',
+    intro: 'From urgent repairs to planned installations and ongoing maintenance, Exclusive Group provides practical plumbing support for residential and commercial properties.',
     services: [
       'Leak detection & repairs',
       'Toilet installation & repairs',
@@ -107,11 +107,11 @@ const maintenanceServices = [
   {
     slug: 'tiling',
     title: 'Tiling',
-    image: '/assets/titling_.jpg',
+    image: 'https://images.pexels.com/photos/29181494/pexels-photo-29181494.jpeg?auto=compress&cs=tinysrgb&w=1400',
     position: '58% 50%',
     summary: 'Clean, durable tiling work for floors, walls, bathrooms, kitchens and outdoor spaces.',
     heroTitle: 'Quality tiling that transforms spaces.',
-    intro: 'XCLSV delivers well-prepared, carefully finished tiling work designed to improve both the appearance and usability of a space.',
+    intro: 'Exclusive Group delivers well-prepared, carefully finished tiling work designed to improve both the appearance and usability of a space.',
     services: [
       'Floor tiling',
       'Wall tiling',
@@ -124,11 +124,11 @@ const maintenanceServices = [
   {
     slug: 'painting',
     title: 'Painting',
-    image: '/assets/01-painting-worker.jpg',
+    image: 'https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1400',
     position: '56% 50%',
     summary: 'Interior and exterior painting with the preparation and finishing needed for a cleaner, longer-lasting result.',
     heroTitle: 'Painting that refreshes spaces and protects value.',
-    intro: 'Good painting starts before the first coat. XCLSV combines surface preparation, careful application and tidy delivery across residential and commercial properties.',
+    intro: 'Good painting starts before the first coat. Exclusive Group combines surface preparation, careful application and tidy delivery across residential and commercial properties.',
     services: [
       'Interior painting',
       'Exterior painting',
@@ -145,7 +145,7 @@ const maintenanceServices = [
     position: '50% 50%',
     summary: 'Practical fabrication, repairs and steelwork for property access, safety, structure and improvement.',
     heroTitle: 'Strong work. Solid solutions. Built to last.',
-    intro: 'From repairs and installations to fabricated steel elements, XCLSV supports properties with dependable welding work suited to the job at hand.',
+    intro: 'From repairs and installations to fabricated steel elements, Exclusive Group supports properties with dependable welding work suited to the job at hand.',
     services: [
       'Gate & fence manufacturing & repairs',
       'Staircases & balustrades',
@@ -161,11 +161,11 @@ function BookingModal({ open, onClose }) {
   if (!open) return null
 
   const whatsappMessage = encodeURIComponent(
-    "Hi XCLSV Group, I'd like to book a consultation. Please let me know your next available time.",
+    "Hi Exclusive Group, I'd like to book a consultation. Please let me know your next available time.",
   )
-  const emailSubject = encodeURIComponent('XCLSV Group — Consultation Booking Request')
+  const emailSubject = encodeURIComponent('Exclusive Group — Consultation Booking Request')
   const emailBody = encodeURIComponent(
-    "Hi XCLSV Group,\n\nI'd like to book a consultation. Please contact me with your next available time.\n\nName:\nPhone:\nArea of interest:\nPreferred date/time:\n\nThank you.",
+    "Hi Exclusive Group,\n\nI'd like to book a consultation. Please contact me with your next available time.\n\nName:\nPhone:\nArea of interest:\nPreferred date/time:\n\nThank you.",
   )
 
   return (
@@ -178,7 +178,7 @@ function BookingModal({ open, onClose }) {
         onMouseDown={(event) => event.stopPropagation()}
       >
         <button className="booking-modal-close" type="button" onClick={onClose} aria-label="Close booking options">×</button>
-        <span className="kicker kicker-gold">Book with XCLSV</span>
+        <span className="kicker kicker-gold">Book with Exclusive Group</span>
         <h2 id="booking-modal-title">How would you like to book?</h2>
         <p>Choose the channel that suits you and we'll continue the booking conversation there.</p>
         <div className="booking-options">
@@ -212,63 +212,63 @@ const SEO_DEFAULT_IMAGE = `${SEO_SITE_URL}/assets/xclsv-logo.png`
 
 const seoPages = {
   '/': {
-    title: 'XCLSV Group | Property Management & Maintenance Services',
-    description: 'XCLSV Group provides property management, maintenance and project support that helps residential and commercial properties stay functional, presentable and protected in South Africa.',
+    title: 'Exclusive Group | Property Management & Maintenance Services',
+    description: 'Exclusive Group provides property management, maintenance and project support that helps residential and commercial properties stay functional, presentable and protected in South Africa.',
   },
   '/contact': {
-    title: 'Contact XCLSV Group | Property Management & Maintenance',
-    description: 'Contact XCLSV Group for property management, maintenance services, project support or general property enquiries in South Africa.',
+    title: 'Contact Exclusive Group | Property Management & Maintenance',
+    description: 'Contact Exclusive Group for property management, maintenance services, project support or general property enquiries in South Africa.',
   },
   '/property-maintenance': {
-    title: 'Property Maintenance Services | XCLSV Group',
-    description: 'Explore XCLSV Group property maintenance services including plumbing, tiling, painting and welding for residential and commercial properties.',
+    title: 'Property Maintenance Services | Exclusive Group',
+    description: 'Explore Exclusive Group property maintenance services including plumbing, tiling, painting and welding for residential and commercial properties.',
   },
   '/property-maintenance/plumbing': {
-    title: 'Plumbing Services | XCLSV Group',
-    description: 'Professional plumbing repairs, installations and maintenance for residential and commercial properties from XCLSV Group.',
+    title: 'Plumbing Services | Exclusive Group',
+    description: 'Professional plumbing repairs, installations and maintenance for residential and commercial properties from Exclusive Group.',
   },
   '/property-maintenance/tiling': {
-    title: 'Tiling Services | XCLSV Group',
+    title: 'Tiling Services | Exclusive Group',
     description: 'Professional floor, wall, bathroom, kitchen and outdoor tiling services designed for clean, durable property finishes.',
   },
   '/property-maintenance/painting': {
-    title: 'Painting Services | XCLSV Group',
-    description: 'Interior and exterior painting, wall preparation, waterproofing support and feature-wall services from XCLSV Group.',
+    title: 'Painting Services | Exclusive Group',
+    description: 'Interior and exterior painting, wall preparation, waterproofing support and feature-wall services from Exclusive Group.',
   },
   '/property-maintenance/welding': {
-    title: 'Welding & Fabrication Services | XCLSV Group',
+    title: 'Welding & Fabrication Services | Exclusive Group',
     description: 'Welding, steel fabrication, gates, fencing, balustrades, repairs and installations for practical property needs.',
   },
   '/privacy': {
-    title: 'Privacy Policy | XCLSV Group',
-    description: 'Read how XCLSV Group handles personal information submitted through this website, including enquiries, bookings and customer reviews.',
+    title: 'Privacy Policy | Exclusive Group',
+    description: 'Read how Exclusive Group handles personal information submitted through this website, including enquiries, bookings and customer reviews.',
   },
   '/terms': {
-    title: 'Terms & Conditions | XCLSV Group',
-    description: 'Read the terms governing use of the XCLSV Group website, property information, enquiries, bookings, reviews and services.',
+    title: 'Terms & Conditions | Exclusive Group',
+    description: 'Read the terms governing use of the Exclusive Group website, property information, enquiries, bookings, reviews and services.',
   },
   '/business-investments': {
-    title: 'Business Investments | XCLSV Group',
-    description: 'Explore business investment opportunities and growth-focused support from XCLSV Group.',
+    title: 'Business Investments | Exclusive Group',
+    description: 'Explore business investment opportunities and growth-focused support from Exclusive Group.',
   },
   '/business-management': {
-    title: 'Business Management | XCLSV Group',
+    title: 'Business Management | Exclusive Group',
     description: 'Practical business management support focused on organisation, coordination and sustainable growth.',
   },
   '/project-management': {
-    title: 'Project Management | XCLSV Group',
-    description: 'Project planning, coordination and delivery support from XCLSV Group.',
+    title: 'Project Management | Exclusive Group',
+    description: 'Project planning, coordination and delivery support from Exclusive Group.',
   },
   '/real-estates': {
-    title: 'Real Estate | XCLSV Group',
+    title: 'Real Estate | Exclusive Group',
     description: 'Real estate support focused on practical property opportunities, improvement and long-term value.',
   },
   '/events': {
-    title: 'Events | XCLSV Group',
-    description: 'Event planning, coordination and delivery support from XCLSV Group.',
+    title: 'Events | Exclusive Group',
+    description: 'Event planning, coordination and delivery support from Exclusive Group.',
   },
   '/catering-services': {
-    title: 'Catering Services | XCLSV Group',
+    title: 'Catering Services | Exclusive Group',
     description: 'Professional catering support for business functions, private occasions and events.',
   },
 }
@@ -298,10 +298,10 @@ function usePageSeo(path) {
     const isAdmin = path === '/admin' || path === '/admin/reviews'
     const isKnownPage = Boolean(seoPages[path]) || /^\/property-maintenance\/(plumbing|tiling|painting|welding)$/.test(path)
     const page = seoPages[path] || {
-      title: isAdmin ? 'XCLSV Admin' : 'Page Not Found | XCLSV Group',
+      title: isAdmin ? 'Exclusive Group Admin' : 'Page Not Found | Exclusive Group',
       description: isAdmin
-        ? 'Secure XCLSV Group website administration.'
-        : 'The page you requested could not be found on the XCLSV Group website.',
+        ? 'Secure Exclusive Group website administration.'
+        : 'The page you requested could not be found on the Exclusive Group website.',
     }
 
     const canonicalPath = path === '/' ? '' : path
@@ -312,15 +312,15 @@ function usePageSeo(path) {
 
     ensureMeta('name', 'description', page.description)
     ensureMeta('name', 'robots', isAdmin || !isKnownPage ? 'noindex, nofollow' : 'index, follow')
-    ensureMeta('name', 'author', 'XCLSV Group Pty Ltd.')
+    ensureMeta('name', 'author', 'Exclusive Group Pty Ltd.')
 
     ensureMeta('property', 'og:type', 'website')
-    ensureMeta('property', 'og:site_name', 'XCLSV Group')
+    ensureMeta('property', 'og:site_name', 'Exclusive Group')
     ensureMeta('property', 'og:title', page.title)
     ensureMeta('property', 'og:description', page.description)
     ensureMeta('property', 'og:url', canonical)
     ensureMeta('property', 'og:image', SEO_DEFAULT_IMAGE)
-    ensureMeta('property', 'og:image:alt', 'XCLSV Group')
+    ensureMeta('property', 'og:image:alt', 'Exclusive Group')
 
     ensureMeta('name', 'twitter:card', 'summary_large_image')
     ensureMeta('name', 'twitter:title', page.title)
@@ -370,8 +370,8 @@ function Header() {
     <>
       <header className="site-header">
         <div className="header-inner shell">
-          <a className="brand" href="/" aria-label="XCLSV Group home">
-            <img src="/assets/xclsv-logo.png" alt="XCLSV Group" />
+          <a className="brand" href="/" aria-label="Exclusive Group home">
+            <img src="/assets/xclsv-logo.png" alt="Exclusive Group" />
           </a>
 
           <button
@@ -451,12 +451,12 @@ function Hero() {
             We maintain. We improve. We add value.
           </h1>
           <p>
-            XCLSV Group brings property management, maintenance capability and project delivery into one connected service — helping owners keep properties functional, presentable, protected and performing at their best.
+            Exclusive Group brings property management, maintenance capability and project delivery into one connected service — helping owners keep properties functional, presentable, protected and performing at their best.
           </p>
 
           <div className="hero-actions">
             <a className="button button-gold" href="#partnership">Explore Property Management <ArrowIcon /></a>
-            <a className="button button-ghost" href="#about">Discover XCLSV</a>
+            <a className="button button-ghost" href="#about">Discover Exclusive Group</a>
           </div>
 
           <div className="hero-proof">
@@ -479,7 +479,7 @@ function Hero() {
           <div className="visual-frame">
             <img
               src={imagery.hero}
-              alt="Premium modern residential property representing XCLSV Group property management services"
+              alt="Property manager consulting with a client about a residential property"
               fetchPriority="high"
             />
             <div className="visual-overlay" />
@@ -559,7 +559,7 @@ const additionalReviews = [
     id: 'additional-7',
     name: 'Zanele T.',
     rating: 5,
-    comment: 'XCLSV handled the maintenance work professionally and kept communication clear throughout. Everything was completed neatly and on time.',
+    comment: 'Exclusive Group handled the maintenance work professionally and kept communication clear throughout. Everything was completed neatly and on time.',
   },
   {
     id: 'additional-8',
@@ -601,7 +601,7 @@ const additionalReviews = [
     id: 'additional-14',
     name: 'Sibusiso N.',
     rating: 5,
-    comment: 'XCLSV made the process simple. The team arrived prepared, worked efficiently and delivered exactly what had been discussed.',
+    comment: 'Exclusive Group made the process simple. The team arrived prepared, worked efficiently and delivered exactly what had been discussed.',
   },
   {
     id: 'additional-15',
@@ -631,7 +631,7 @@ const additionalReviews = [
     id: 'additional-19',
     name: 'Keitumetse B.',
     rating: 5,
-    comment: 'The team paid attention to the small details and kept the whole process organised. I would gladly work with XCLSV again.',
+    comment: 'The team paid attention to the small details and kept the whole process organised. I would gladly work with Exclusive Group again.',
   },
   {
     id: 'additional-20',
@@ -655,7 +655,7 @@ const additionalReviews = [
     id: 'additional-23',
     name: 'Nokuthula M.',
     rating: 5,
-    comment: 'The experience was straightforward and well managed. XCLSV communicated clearly and completed the work with a high level of care.',
+    comment: 'The experience was straightforward and well managed. Exclusive Group communicated clearly and completed the work with a high level of care.',
   },
   {
     id: 'additional-24',
@@ -862,7 +862,7 @@ function Reviews() {
     setHoverRating(0)
     setComment('')
     setFormOpen(false)
-    setReviewNotice('Thank you. Your review has been submitted and will appear once XCLSV approves it.')
+    setReviewNotice('Thank you. Your review has been submitted and will appear once Exclusive Group approves it.')
   }
 
   const goPrevious = () => {
@@ -915,7 +915,7 @@ function Reviews() {
           {displayReviews.length === 0 ? (
             <div className="review-empty-public">
               <strong>No published reviews yet.</strong>
-              <span>Be the first to share your experience with XCLSV Group.</span>
+              <span>Be the first to share your experience with Exclusive Group.</span>
             </div>
           ) : displayReviews.map((review) => (
             <article className="review-card" key={review.id}>
@@ -967,7 +967,7 @@ function Reviews() {
               <div className="review-form-heading">
                 <div>
                   <span className="kicker kicker-gold">Share your experience</span>
-                  <h3 id="review-modal-title">Leave XCLSV a review.</h3>
+                  <h3 id="review-modal-title">Leave Exclusive Group a review.</h3>
                 </div>
                 <button className="review-form-close" type="button" onClick={() => setFormOpen(false)} aria-label="Close review form">×</button>
               </div>
@@ -1014,7 +1014,7 @@ function Reviews() {
                 {submitting ? 'Submitting…' : 'Submit review'} {!submitting && <ArrowIcon />}
               </button>
 
-              <p className="review-form-note">Reviews are moderated by XCLSV before they are published.</p>
+              <p className="review-form-note">Reviews are moderated by Exclusive Group before they are published.</p>
             </form>
           </div>
         </div>
@@ -1028,12 +1028,12 @@ function About() {
     <section className="section section-light" id="about">
       <div className="shell about-grid">
         <div className="section-heading">
-          <span className="kicker">The XCLSV approach</span>
+          <span className="kicker">The Exclusive Group approach</span>
           <h2>Property management first. <span>Everything supports the asset.</span></h2>
         </div>
         <div className="about-copy">
           <p className="lead">
-            XCLSV is centred on managing and maintaining property well — combining day-to-day property care, practical maintenance and coordinated project support to protect and improve each asset.
+            Exclusive Group is centred on managing and maintaining property well — combining day-to-day property care, practical maintenance and coordinated project support to protect and improve each asset.
           </p>
           <p>
             That gives the Group one clear story: understand what a property needs, coordinate the right work, maintain it professionally and protect value for owners, clients and communities.
@@ -1076,7 +1076,7 @@ function About() {
         <img
           className="property-showcase-fallback"
           src={imagery.showcase}
-          alt="Contemporary residential property reflecting XCLSV Group's premium property focus"
+          alt="Contemporary residential property reflecting Exclusive Group's premium property focus"
           loading="lazy"
         />
 
@@ -1113,13 +1113,13 @@ function Partnership() {
           <h2>Look after the property. <span>Protect the value.</span></h2>
         </div>
         <p>
-          XCLSV's property management approach is about understanding what each residential or commercial property needs, coordinating the right maintenance and improvement work, and keeping the asset well managed over the long term.
+          Exclusive Group's property management approach is about understanding what each residential or commercial property needs, coordinating the right maintenance and improvement work, and keeping the asset well managed over the long term.
         </p>
       </div>
 
       <div className="shell partnership-grid">
         <div className="partnership-image">
-          <img src={imagery.partnership} alt="Premium modern residential property at night" loading="lazy" />
+          <img src={imagery.partnership} alt="Property management professionals reviewing a residential property together" loading="lazy" />
           <div className="partnership-image-copy">
             <span>Practical property care</span>
             <strong>Assess. Maintain. Improve. Protect.</strong>
@@ -1197,7 +1197,7 @@ function Projects() {
           <span className="kicker kicker-gold">Project management</span>
           <h2>Plan properly. <span>Deliver confidently.</span></h2>
           <p className="lead">
-            From renovations and property improvements to larger maintenance programmes, XCLSV coordinates the moving parts required to take work from plan to handover.
+            From renovations and property improvements to larger maintenance programmes, Exclusive Group coordinates the moving parts required to take work from plan to handover.
           </p>
           <div className="project-list">
             <span>Project planning & scheduling</span>
@@ -1231,7 +1231,7 @@ function Impact() {
           <h2>CREATING EMPLOYMENT AND GIVING BACK</h2>
         </div>
         <p>
-          Growth should create opportunity. XCLSV is building a model where property, projects and service delivery can contribute to sustainable work and stronger communities.
+          Growth should create opportunity. Exclusive Group is building a model where property, projects and service delivery can contribute to sustainable work and stronger communities.
         </p>
       </div>
     </section>
@@ -1260,7 +1260,7 @@ function Footer() {
     <footer className="footer">
       <div className="shell footer-grid">
         <div className="footer-brand">
-          <img src="/assets/xclsv-logo.png" alt="XCLSV Group" />
+          <img src="/assets/xclsv-logo.png" alt="Exclusive Group" />
           <p>
             Property management, property maintenance and project delivery built around protecting long-term value.
           </p>
@@ -1291,7 +1291,7 @@ function Footer() {
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© 2026 XCLSV Group Pty Ltd.</span>
+        <span>© 2026 Exclusive Group Pty Ltd.</span>
         <div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top ↑</a></div>
       </div>
     </footer>
@@ -1368,7 +1368,7 @@ function ContactPage() {
       interest: 'Property Management',
       message: '',
     })
-    setFormNotice('Thank you. Your enquiry has been sent to XCLSV Group.')
+    setFormNotice('Thank you. Your enquiry has been sent to Exclusive Group.')
   }
 
   return (
@@ -1377,14 +1377,14 @@ function ContactPage() {
         <div className="contact-hero-media">
           <img
             src={imagery.showcase}
-            alt="Premium residential property representing XCLSV Group"
+            alt="Premium residential property representing Exclusive Group"
           />
           <div className="contact-hero-overlay" />
         </div>
 
         <div className="shell contact-hero-grid">
           <div className="contact-hero-copy">
-            <span className="kicker kicker-gold">Contact XCLSV Group</span>
+            <span className="kicker kicker-gold">Contact Exclusive Group</span>
             <h1>Let's build value <span>together.</span></h1>
             <p>
               Whether you need ongoing property management, maintenance support or a project that needs coordinated delivery, start the conversation with us.
@@ -1415,7 +1415,7 @@ function ContactPage() {
             <span className="kicker">Start a conversation</span>
             <h2>Tell us what you're looking to <span>build, improve or grow.</span></h2>
             <p>
-              Give us a little context and we'll know which part of the XCLSV Group is best placed to help.
+              Give us a little context and we'll know which part of the Exclusive Group is best placed to help.
             </p>
 
             <div className="contact-paths">
@@ -1441,7 +1441,7 @@ function ContactPage() {
             <div className="contact-form-heading">
               <span>Enquiry form</span>
               <h2>How can we help?</h2>
-              <p>Complete the form and your enquiry will be sent directly to the XCLSV team.</p>
+              <p>Complete the form and your enquiry will be sent directly to the Exclusive Group team.</p>
             </div>
 
             <form className="contact-form" onSubmit={submitEnquiry}>
@@ -1506,7 +1506,7 @@ function ContactPage() {
                 {submitting ? 'Sending…' : 'Send enquiry'} {!submitting && <ArrowIcon />}
               </button>
               <p className="contact-form-note">
-                Your enquiry is stored securely for the XCLSV team. Email notifications will be added during the final production setup.
+                Your enquiry is stored securely for the Exclusive Group team. Email notifications will be added during the final production setup.
               </p>
             </form>
           </div>
@@ -1521,7 +1521,7 @@ function ContactPage() {
           </div>
           <div className="contact-response-steps">
             <article><strong>01</strong><span>We review your enquiry and understand what you need.</span></article>
-            <article><strong>02</strong><span>The right XCLSV capability is matched to the conversation.</span></article>
+            <article><strong>02</strong><span>The right Exclusive Group capability is matched to the conversation.</span></article>
             <article><strong>03</strong><span>We contact you to discuss scope, opportunity and the way forward.</span></article>
           </div>
         </div>
@@ -1540,7 +1540,7 @@ function MaintenanceOverviewPage() {
             <span className="kicker kicker-gold">Property Maintenance</span>
             <h1>Protect the property. <span>Preserve the value.</span></h1>
             <p>
-              XCLSV's maintenance capability supports residential and commercial properties with practical trades, repairs and improvement work — all under one property management and maintenance-focused brand.
+              Exclusive Group's maintenance capability supports residential and commercial properties with practical trades, repairs and improvement work — all under one property management and maintenance-focused brand.
             </p>
             <div className="maintenance-page-hero-actions">
               <a className="button button-gold" href="/contact">Request maintenance support <ArrowIcon /></a>
@@ -1548,7 +1548,7 @@ function MaintenanceOverviewPage() {
             </div>
           </div>
           <div className="maintenance-overview-visual">
-            <img src={imagery.showcase} alt="Modern property representing XCLSV maintenance services" />
+            <img src={imagery.showcase} alt="Modern property representing Exclusive Group maintenance services" />
             <div className="maintenance-overview-visual-copy">
               <small>Our role</small>
               <strong>Maintain. Improve. Add value.</strong>
@@ -1564,7 +1564,7 @@ function MaintenanceOverviewPage() {
             <h2>One property team. <span>Four specialist capabilities.</span></h2>
           </div>
           <p>
-            Choose the service you need. Each capability has its own page with a clearer breakdown of the work XCLSV can support.
+            Choose the service you need. Each capability has its own page with a clearer breakdown of the work Exclusive Group can support.
           </p>
         </div>
         <div className="shell maintenance-index-grid">
@@ -1601,7 +1601,7 @@ function MaintenanceOverviewPage() {
       <section className="maintenance-page-cta">
         <div className="shell maintenance-page-cta-card">
           <div><span className="kicker">Need property support?</span><h2>Tell us what needs attention.</h2></div>
-          <a className="button button-dark" href="/contact">Contact XCLSV <ArrowIcon /></a>
+          <a className="button button-dark" href="/contact">Contact Exclusive Group <ArrowIcon /></a>
         </div>
       </section>
     </main>
@@ -1615,7 +1615,7 @@ function MaintenanceServicePage({ service }) {
     <main className="maintenance-detail-page" id="top">
       <section className="maintenance-detail-hero">
         <div className="maintenance-detail-hero-media">
-          <img src={service.image} alt={`${service.title} services by XCLSV Group`} style={{ objectPosition: service.position }} />
+          <img src={service.image} alt={`${service.title} services by Exclusive Group`} style={{ objectPosition: service.position }} />
           <div className="maintenance-detail-hero-shade" />
         </div>
         <div className="shell maintenance-detail-hero-copy">
@@ -1679,11 +1679,11 @@ function AdminLogin() {
     <main className="admin-login-page">
       <div className="admin-login-shell">
         <a className="admin-login-brand" href="/">
-          <img src="/assets/xclsv-logo.png" alt="XCLSV Group" />
+          <img src="/assets/xclsv-logo.png" alt="Exclusive Group" />
         </a>
 
         <div className="admin-login-card">
-          <span className="admin-eyebrow">XCLSV ADMIN</span>
+          <span className="admin-eyebrow">Exclusive Group ADMIN</span>
           <h1>Review approvals.</h1>
           <p>Sign in to review, approve or reject customer feedback before it appears on the website.</p>
 
@@ -1867,10 +1867,10 @@ function AdminDashboard({ session }) {
       <header className="admin-topbar">
         <div className="admin-topbar-inner">
           <a href="/" className="admin-brand">
-            <img src="/assets/xclsv-logo.png" alt="XCLSV Group" />
+            <img src="/assets/xclsv-logo.png" alt="Exclusive Group" />
           </a>
           <div className="admin-topbar-title">
-            <strong>XCLSV Admin</strong>
+            <strong>Exclusive Group Admin</strong>
             <span>{session.user.email}</span>
           </div>
           <div className="admin-topbar-actions">
@@ -1908,8 +1908,8 @@ function AdminDashboard({ session }) {
             <h1>{section === 'reviews' ? 'Review approvals' : 'Contact enquiries'}</h1>
             <p>
               {section === 'reviews'
-                ? 'Only approved reviews are shown publicly on the XCLSV homepage.'
-                : 'Enquiries submitted through the website are stored here for the XCLSV team to follow up.'}
+                ? 'Only approved reviews are shown publicly on the Exclusive Group homepage.'
+                : 'Enquiries submitted through the website are stored here for the Exclusive Group team to follow up.'}
             </p>
           </div>
           <button className="admin-refresh-button" type="button" onClick={loadData} disabled={loading}>
@@ -2054,9 +2054,9 @@ function AdminDashboard({ session }) {
               ) : (
                 filteredEnquiries.map((enquiry) => {
                   const waNumber = whatsappNumber(enquiry.phone)
-                  const emailSubject = encodeURIComponent(`Re: XCLSV Website Enquiry — ${enquiry.interest}`)
-                  const emailBody = encodeURIComponent(`Hi ${enquiry.name},\n\nThank you for contacting XCLSV Group.\n\n`)
-                  const waMessage = encodeURIComponent(`Hi ${enquiry.name}, thank you for contacting XCLSV Group regarding ${enquiry.interest}.`)
+                  const emailSubject = encodeURIComponent(`Re: Exclusive Group Website Enquiry — ${enquiry.interest}`)
+                  const emailBody = encodeURIComponent(`Hi ${enquiry.name},\n\nThank you for contacting Exclusive Group.\n\n`)
+                  const waMessage = encodeURIComponent(`Hi ${enquiry.name}, thank you for contacting Exclusive Group regarding ${enquiry.interest}.`)
 
                   return (
                     <article className="admin-enquiry-card" key={enquiry.id}>
@@ -2147,7 +2147,7 @@ function AdminPage() {
       <main className="admin-login-page">
         <div className="admin-login-shell">
           <a className="admin-login-brand" href="/">
-            <img src="/assets/xclsv-logo.png" alt="XCLSV Group" />
+            <img src="/assets/xclsv-logo.png" alt="Exclusive Group" />
           </a>
           <div className="admin-login-card">
             <span className="admin-eyebrow">SETUP REQUIRED</span>
@@ -2183,7 +2183,7 @@ function NotFoundPage() {
             </p>
             <div className="not-found-actions">
               <a className="button button-gold" href="/">Back to homepage <ArrowIcon /></a>
-              <a className="button button-ghost" href="/contact">Contact XCLSV</a>
+              <a className="button button-ghost" href="/contact">Contact Exclusive Group</a>
             </div>
           </div>
         </div>
@@ -2201,7 +2201,7 @@ function LegalPage({ type }) {
       body: (
         <>
           <p>
-            XCLSV Group Pty Ltd ("XCLSV", "we", "us" or "our") operates this website and provides
+            Exclusive Group Pty Ltd ("Exclusive Group", "we", "us" or "our") operates this website and provides
             property management, property maintenance and project management services in South Africa.
           </p>
           <p>
@@ -2246,7 +2246,7 @@ function LegalPage({ type }) {
       body: (
         <p>
           Reviews submitted through the website are stored for moderation. A review is not displayed publicly
-          unless XCLSV approves it. If approved, the reviewer name, star rating and review text may appear on the
+          unless Exclusive Group approves it. If approved, the reviewer name, star rating and review text may appear on the
           website. Do not include confidential, financial, identity-document or other sensitive information in a review.
         </p>
       ),
@@ -2311,7 +2311,7 @@ function LegalPage({ type }) {
       body: (
         <p>
           The website may link to third-party services such as WhatsApp, email providers or external websites.
-          Their privacy practices are governed by their own terms and privacy policies, and XCLSV is not responsible
+          Their privacy practices are governed by their own terms and privacy policies, and Exclusive Group is not responsible
           for how those third parties process information.
         </p>
       ),
@@ -2332,7 +2332,7 @@ function LegalPage({ type }) {
       title: '1. About these terms',
       body: (
         <p>
-          These Terms and Conditions govern the use of the XCLSV Group website. By using the website, submitting an
+          These Terms and Conditions govern the use of the Exclusive Group website. By using the website, submitting an
           enquiry, booking a consultation or submitting a review, you agree to use the website lawfully and in
           accordance with these terms.
         </p>
@@ -2342,7 +2342,7 @@ function LegalPage({ type }) {
       title: '2. Website information',
       body: (
         <p>
-          Website content is provided for general information about XCLSV Group, its property management services,
+          Website content is provided for general information about Exclusive Group, its property management services,
           property maintenance capabilities and project management services. We aim to keep information accurate and
           current, but we do not warrant that every description, image, price indication, availability statement or
           other item is complete, error-free or suitable for every circumstance.
@@ -2369,7 +2369,7 @@ function LegalPage({ type }) {
       title: '4. Quotes, bookings and services',
       body: (
         <p>
-          Enquiries and consultation bookings do not create a binding obligation on XCLSV to perform work. Scope,
+          Enquiries and consultation bookings do not create a binding obligation on Exclusive Group to perform work. Scope,
           pricing, timelines, materials, payment terms and other commercial terms must be confirmed separately.
           A service engagement becomes binding only when the relevant parties agree to the applicable quotation,
           proposal, work order or contract.
@@ -2381,7 +2381,7 @@ function LegalPage({ type }) {
       body: (
         <p>
           Customers and partners are responsible for providing accurate information, lawful access to relevant
-          properties or sites, and any approvals, permissions or disclosures reasonably required for XCLSV to assess
+          properties or sites, and any approvals, permissions or disclosures reasonably required for Exclusive Group to assess
           or perform the requested work.
         </p>
       ),
@@ -2395,7 +2395,7 @@ function LegalPage({ type }) {
             threatening, discriminatory, unlawful, misleading, confidential or infringing material.
           </p>
           <p>
-            XCLSV may moderate, approve, reject or remove reviews at its discretion. Submitting a review gives XCLSV
+            Exclusive Group may moderate, approve, reject or remove reviews at its discretion. Submitting a review gives Exclusive Group
             permission to display the submitted name, rating and review text on the website once approved.
           </p>
         </>
@@ -2405,7 +2405,7 @@ function LegalPage({ type }) {
       title: '7. Intellectual property',
       body: (
         <p>
-          The XCLSV name, logo, website design, copy, graphics and other original website content are protected by
+          The Exclusive Group name, logo, website design, copy, graphics and other original website content are protected by
           applicable intellectual-property laws. You may view the website for personal or legitimate business
           purposes, but you may not reproduce, republish, sell or exploit protected content without permission.
         </p>
@@ -2416,7 +2416,7 @@ function LegalPage({ type }) {
       body: (
         <p>
           The website may use or link to third-party platforms such as WhatsApp, email services, hosting providers or
-          other online tools. Those services operate under their own terms. XCLSV is not responsible for the
+          other online tools. Those services operate under their own terms. Exclusive Group is not responsible for the
           availability, content, security or conduct of third-party services.
         </p>
       ),
@@ -2427,7 +2427,7 @@ function LegalPage({ type }) {
         <>
           <p>
             We may update, suspend or change parts of the website without notice. To the extent permitted by law,
-            XCLSV is not liable for indirect or consequential loss arising solely from use of, or inability to use,
+            Exclusive Group is not liable for indirect or consequential loss arising solely from use of, or inability to use,
             this website.
           </p>
           <p>
@@ -2477,8 +2477,8 @@ function LegalPage({ type }) {
           <h1>{isPrivacy ? 'Privacy Policy' : 'Terms & Conditions'}</h1>
           <p>
             {isPrivacy
-              ? 'How XCLSV Group handles personal information submitted through this website.'
-              : 'The terms that apply when you use the XCLSV Group website, submit information or engage with our services.'}
+              ? 'How Exclusive Group handles personal information submitted through this website.'
+              : 'The terms that apply when you use the Exclusive Group website, submit information or engage with our services.'}
           </p>
           <span className="legal-updated">Last updated: 28 August 2026</span>
         </div>
@@ -2488,7 +2488,7 @@ function LegalPage({ type }) {
         <div className="shell legal-layout">
           <aside className="legal-summary">
             <span>{isPrivacy ? 'Privacy contact' : 'Company contact'}</span>
-            <strong>XCLSV Group Pty Ltd.</strong>
+            <strong>Exclusive Group Pty Ltd.</strong>
             <a href="mailto:info@xclsvgroup.co.za">info@xclsvgroup.co.za</a>
             <a href="tel:+27603156018">+27 50 213 9159</a>
             <p>South Africa</p>
@@ -2510,7 +2510,7 @@ function LegalPage({ type }) {
 
 function WhatsAppButton() {
   const message = encodeURIComponent(
-    "Hi XCLSV Group, I'd like to find out more about your property services."
+    "Hi Exclusive Group, I'd like to find out more about your property services."
   )
 
   return (
@@ -2519,7 +2519,7 @@ function WhatsAppButton() {
       href={`https://wa.me/27502139159?text=${message}`}
       target="_blank"
       rel="noreferrer"
-      aria-label="Chat with XCLSV Group on WhatsApp"
+      aria-label="Chat with Exclusive Group on WhatsApp"
       title="Chat with us on WhatsApp"
     >
       <WhatsAppIcon />
