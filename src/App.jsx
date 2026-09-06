@@ -1344,22 +1344,37 @@ function ContactPage() {
 
     setSubmitting(true)
 
-    const { error } = await supabase.from('contact_enquiries').insert({
+    const enquiry = {
       name: form.name.trim(),
       email: form.email.trim(),
       phone: form.phone.trim() || null,
       interest: form.interest,
       message: form.message.trim(),
       status: 'new',
-    })
+    }
 
-    setSubmitting(false)
+    const { error: saveError } = await supabase
+      .from('contact_enquiries')
+      .insert(enquiry)
 
-    if (error) {
-      console.error('Contact enquiry submission failed:', error.message)
+    if (saveError) {
+      setSubmitting(false)
+      console.error('Contact enquiry submission failed:', saveError.message)
       setFormError('We could not send your enquiry right now. Please try again or email info@xclsvgroup.co.za.')
       return
     }
+
+    const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+      body: {
+        name: enquiry.name,
+        email: enquiry.email,
+        phone: enquiry.phone || '',
+        interest: enquiry.interest,
+        message: enquiry.message,
+      },
+    })
+
+    setSubmitting(false)
 
     setForm({
       name: '',
@@ -1368,6 +1383,15 @@ function ContactPage() {
       interest: 'Property Management',
       message: '',
     })
+
+    if (emailError) {
+      console.error('Contact email notification failed:', emailError.message)
+      setFormNotice(
+        'Thank you. Your enquiry was received successfully. The Exclusive Group team can still view it in the admin dashboard.',
+      )
+      return
+    }
+
     setFormNotice('Thank you. Your enquiry has been sent to Exclusive Group.')
   }
 
@@ -1506,7 +1530,7 @@ function ContactPage() {
                 {submitting ? 'Sending…' : 'Send enquiry'} {!submitting && <ArrowIcon />}
               </button>
               <p className="contact-form-note">
-                Your enquiry is stored securely for the Exclusive Group team. Email notifications will be added during the final production setup.
+                Your enquiry is stored securely and an email notification is sent to the Exclusive Group team.
               </p>
             </form>
           </div>
