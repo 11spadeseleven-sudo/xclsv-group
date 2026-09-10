@@ -719,16 +719,11 @@ function Reviews() {
   const [reviewError, setReviewError] = useState('')
   const sliderRef = useRef(null)
 
-  const showPreviewReviews =
-    typeof window !== 'undefined' &&
-    (window.location.hostname === 'localhost' ||
-      window.location.hostname === '127.0.0.1' ||
-      window.location.hostname.endsWith('.vercel.app'))
-
-const displayReviews = [
-  ...reviews,
-  ...additionalReviews,
-]
+  const displayReviews = [
+    ...reviews,
+    ...additionalReviews,
+  ]
+  
   const averageRating = displayReviews.length
     ? displayReviews.reduce((total, review) => total + Number(review.rating || 0), 0) / displayReviews.length
     : 0
