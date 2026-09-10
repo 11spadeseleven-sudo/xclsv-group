@@ -256,6 +256,10 @@ const seoPages = {
     title: 'Business Management | Exclusive Group',
     description: 'Practical business management support focused on organisation, coordination and sustainable growth.',
   },
+  '/construction': {
+    title: 'Construction | Exclusive Group',
+    description: 'Construction planning, coordination, property improvements and project delivery support from Exclusive Group.',
+  },
   '/project-management': {
     title: 'Project Management | Exclusive Group',
     description: 'Project planning, coordination and delivery support from Exclusive Group.',
@@ -263,6 +267,10 @@ const seoPages = {
   '/real-estates': {
     title: 'Real Estate | Exclusive Group',
     description: 'Real estate support focused on practical property opportunities, improvement and long-term value.',
+  },
+  '/property-partnership': {
+    title: 'Property Partnership | Exclusive Group',
+    description: 'Explore property partnership opportunities with Exclusive Group, focused on collaboration, property improvement, value creation and long-term growth.',
   },
   '/events': {
     title: 'Events | Exclusive Group',
@@ -336,6 +344,7 @@ function Header() {
   const [open, setOpen] = useState(false)
   const [maintenanceOpen, setMaintenanceOpen] = useState(false)
   const [constructionOpen, setConstructionOpen] = useState(false)
+  const [realEstatesOpen, setRealEstatesOpen] = useState(false)
   const [bookingOpen, setBookingOpen] = useState(false)
 
   // Get current path for active state
@@ -364,8 +373,18 @@ function Header() {
     if (href.startsWith('/property-maintenance/')) {
       return path.startsWith('/property-maintenance/')
     }
-    // For business pages and other pages
     return path === href
+  }
+
+  const handleDropdownParentClick = (targetPath, isOpen, setIsOpen) => {
+    const isMobile = window.matchMedia('(max-width: 980px)').matches
+
+    if (isMobile && !isOpen) {
+      setIsOpen(true)
+      return
+    }
+
+    window.location.href = targetPath
   }
 
   return (
@@ -422,8 +441,8 @@ function Header() {
             >
               <button
                 type="button"
-                className={path === '/project-management' ? 'active' : ''}
-                onClick={() => setConstructionOpen((value) => !value)}
+                className={path === '/construction' || path === '/project-management' ? 'active' : ''}
+                onClick={() => handleDropdownParentClick('/construction', constructionOpen, setConstructionOpen)}
               >
                 Construction <ChevronIcon />
               </button>
@@ -433,7 +452,23 @@ function Header() {
               </div>
             </div>
 
-            <a href="/real-estates" className={isActive('/real-estates') ? 'active' : ''}>Real Estates</a>
+            <div
+              className={`nav-dropdown ${realEstatesOpen ? 'is-open' : ''}`}
+              onMouseEnter={() => setRealEstatesOpen(true)}
+              onMouseLeave={() => setRealEstatesOpen(false)}
+            >
+              <button
+                type="button"
+                className={path === '/real-estates' || path === '/property-partnership' ? 'active' : ''}
+                onClick={() => handleDropdownParentClick('/real-estates', realEstatesOpen, setRealEstatesOpen)}
+              >
+                Real Estates <ChevronIcon />
+              </button>
+
+              <div className="dropdown-panel">
+                <a href="/property-partnership" className={path === '/property-partnership' ? 'active' : ''}>Property Partnership</a>
+              </div>
+            </div>
             <a href="/events" className={isActive('/events') ? 'active' : ''}>Events</a>
             <a href="/catering-services" className={isActive('/catering-services') ? 'active' : ''}>Catering Services</a>
 
@@ -1286,6 +1321,7 @@ function Footer() {
           <h4>Company</h4>
           <a href="/#about">About Us</a>
           <a href="/#maintenance">Property Maintenance</a>
+          <a href="/property-partnership">Property Partnership</a>
           <a href="/#projects">Project Management</a>
           <a href="/contact">Contact Us</a>
         </div>
@@ -1306,7 +1342,7 @@ function Footer() {
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© 2026 XCLSV GROUP Pty Ltd.</span>
+        <span>© 2026 Exclusive Group Pty Ltd.</span>
         <div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top ↑</a></div>
       </div>
     </footer>
@@ -1514,6 +1550,7 @@ function ContactPage() {
                     <option>Construction</option>
                     <option>Project Management</option>
                     <option>Real Estates</option>
+                    <option>Property Partnership</option>
                     <option>Events</option>
                     <option>Catering Services</option>
                     <option>General Enquiry</option>
@@ -1575,6 +1612,252 @@ function ContactPage() {
   )
 }
 
+
+
+
+function ConstructionPage() {
+  const constructionCapabilities = [
+    {
+      number: '01',
+      title: 'Project planning',
+      text: 'Define the scope, programme, responsibilities and practical delivery requirements before work starts.',
+    },
+    {
+      number: '02',
+      title: 'Site coordination',
+      text: 'Coordinate contractors, trades, suppliers and day-to-day site activity so the work progresses in the right sequence.',
+    },
+    {
+      number: '03',
+      title: 'Quality & progress control',
+      text: 'Track progress, workmanship, issues and delivery against the agreed scope and expected standard.',
+    },
+    {
+      number: '04',
+      title: 'Handover & close-out',
+      text: 'Bring the work to completion with final checks, outstanding-item management and a clear handover process.',
+    },
+  ]
+
+  return (
+    <main className="maintenance-page" id="top">
+      <section className="maintenance-page-hero">
+        <div className="shell maintenance-page-hero-grid">
+          <div className="maintenance-page-hero-copy">
+            <span className="kicker kicker-gold">Construction</span>
+            <h1>Plan the work. <span>Coordinate the build.</span></h1>
+            <p>
+              Exclusive Group supports construction, renovation and property improvement projects through practical planning, coordination and project delivery — keeping the moving parts aligned from scope to handover.
+            </p>
+            <div className="maintenance-page-hero-actions">
+              <a className="button button-gold" href="/contact">Discuss a construction project <ArrowIcon /></a>
+              <a className="button button-ghost" href="#construction-capabilities">Explore capabilities</a>
+            </div>
+          </div>
+
+          <div className="maintenance-overview-visual">
+            <img
+              src={imagery.project}
+              alt="Construction and project delivery professionals reviewing work on site"
+            />
+            <div className="maintenance-overview-visual-copy">
+              <small>Our role</small>
+              <strong>Plan. Coordinate. Deliver.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="maintenance-service-index" id="construction-capabilities">
+        <div className="shell maintenance-index-heading">
+          <div>
+            <span className="kicker">Construction delivery</span>
+            <h2>One coordinated approach from <span>planning to handover.</span></h2>
+          </div>
+          <p>
+            Our construction offering is built around organised delivery. Project Management sits beneath Construction as the capability that keeps scope, people, timing and quality moving together.
+          </p>
+        </div>
+
+        <div className="shell maintenance-index-grid">
+          {constructionCapabilities.map((item) => (
+            <article className="maintenance-index-card" key={item.number}>
+              <div className="maintenance-index-card-copy">
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="maintenance-principles">
+        <div className="shell maintenance-principles-grid">
+          <div>
+            <span className="kicker kicker-gold">Project Management</span>
+            <h2>The coordination behind <span>successful delivery.</span></h2>
+          </div>
+
+          <div className="maintenance-principle-list">
+            <article>
+              <strong>01</strong>
+              <h3>Programme & scheduling</h3>
+              <p>Organise the sequence of work, milestones and dependencies required to keep delivery moving.</p>
+            </article>
+            <article>
+              <strong>02</strong>
+              <h3>Budget & procurement</h3>
+              <p>Support cost control, purchasing and supplier coordination against the approved project scope.</p>
+            </article>
+            <article>
+              <strong>03</strong>
+              <h3>Site supervision</h3>
+              <p>Coordinate people, progress and workmanship on site while identifying issues early.</p>
+            </article>
+            <article>
+              <strong>04</strong>
+              <h3>Quality & close-out</h3>
+              <p>Manage completion, quality checks, outstanding work and the final project handover.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="maintenance-page-cta">
+        <div className="shell maintenance-page-cta-card">
+          <div>
+            <span className="kicker">Planning construction work?</span>
+            <h2>Let’s get the project properly coordinated.</h2>
+          </div>
+          <a className="button button-dark" href="/project-management">Explore Project Management <ArrowIcon /></a>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+function PropertyPartnershipPage() {
+  const partnershipBenefits = [
+    {
+      number: '01',
+      title: 'Identify the opportunity',
+      text: 'We start by understanding the property, the opportunity, the current condition and what each party wants to achieve.',
+    },
+    {
+      number: '02',
+      title: 'Define the partnership',
+      text: 'We agree on the role of each partner, the scope of work, responsibilities and the commercial structure before work begins.',
+    },
+    {
+      number: '03',
+      title: 'Improve the property',
+      text: 'Exclusive Group can coordinate maintenance, repairs, upgrades and project delivery required to improve the property.',
+    },
+    {
+      number: '04',
+      title: 'Create long-term value',
+      text: 'The focus is on improving usability, presentation, condition and the long-term potential of the property.',
+    },
+  ]
+
+  return (
+    <main className="maintenance-page" id="top">
+      <section className="maintenance-page-hero">
+        <div className="shell maintenance-page-hero-grid">
+          <div className="maintenance-page-hero-copy">
+            <span className="kicker kicker-gold">Real Estates · Property Partnership</span>
+            <h1>Partner around property. <span>Create value together.</span></h1>
+            <p>
+              Exclusive Group works with property owners, investors and partners who want to improve, reposition or unlock greater value from residential and commercial property through a practical partnership approach.
+            </p>
+            <div className="maintenance-page-hero-actions">
+              <a className="button button-gold" href="/contact">Discuss a property partnership <ArrowIcon /></a>
+              <a className="button button-ghost" href="#partnership-model">How it works</a>
+            </div>
+          </div>
+
+          <div className="maintenance-overview-visual">
+            <img
+              src={imagery.partnership}
+              alt="Property partners discussing a residential property opportunity"
+            />
+            <div className="maintenance-overview-visual-copy">
+              <small>Our approach</small>
+              <strong>Collaborate. Improve. Grow value.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="maintenance-service-index" id="partnership-model">
+        <div className="shell maintenance-index-heading">
+          <div>
+            <span className="kicker">The partnership model</span>
+            <h2>A practical way to <span>work around property opportunities.</span></h2>
+          </div>
+          <p>
+            Property Partnership sits within our Real Estates offering and is designed for opportunities where collaboration, property improvement and coordinated delivery can create stronger long-term value.
+          </p>
+        </div>
+
+        <div className="shell maintenance-index-grid">
+          {partnershipBenefits.map((item) => (
+            <article className="maintenance-index-card" key={item.number}>
+              <div className="maintenance-index-card-copy">
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="maintenance-principles">
+        <div className="shell maintenance-principles-grid">
+          <div>
+            <span className="kicker kicker-gold">What we bring</span>
+            <h2>Property knowledge backed by <span>hands-on delivery capability.</span></h2>
+          </div>
+
+          <div className="maintenance-principle-list">
+            <article>
+              <strong>01</strong>
+              <h3>Property assessment</h3>
+              <p>Understanding the current state of the property, the opportunity and where value can be improved.</p>
+            </article>
+            <article>
+              <strong>02</strong>
+              <h3>Maintenance & improvements</h3>
+              <p>Access to plumbing, tiling, painting, welding and practical property maintenance support.</p>
+            </article>
+            <article>
+              <strong>03</strong>
+              <h3>Project coordination</h3>
+              <p>Planning and coordinating the work needed to move an improvement opportunity from idea to completion.</p>
+            </article>
+            <article>
+              <strong>04</strong>
+              <h3>Long-term value focus</h3>
+              <p>Looking beyond the immediate job to the condition, usability, presentation and future potential of the property.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="maintenance-page-cta">
+        <div className="shell maintenance-page-cta-card">
+          <div>
+            <span className="kicker">Have a property opportunity?</span>
+            <h2>Let’s discuss how we can partner.</h2>
+          </div>
+          <a className="button button-dark" href="/contact">Start the conversation <ArrowIcon /></a>
+        </div>
+      </section>
+    </main>
+  )
+}
 
 function MaintenanceOverviewPage() {
   return (
@@ -2639,6 +2922,10 @@ export default function App() {
   let page
   if (path === '/contact') {
     page = <ContactPage />
+  } else if (path === '/construction') {
+    page = <ConstructionPage />
+  } else if (path === '/property-partnership') {
+    page = <PropertyPartnershipPage />
   } else if (path === '/privacy') {
     page = <LegalPage type="privacy" />
   } else if (path === '/terms') {
