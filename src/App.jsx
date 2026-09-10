@@ -1342,7 +1342,7 @@ function Footer() {
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© 2026 Exclusive Group Pty Ltd.</span>
+        <span>© 2026 XCLSV GROUP Pty Ltd.</span>
         <div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top ↑</a></div>
       </div>
     </footer>
