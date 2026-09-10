@@ -162,11 +162,11 @@ function BookingModal({ open, onClose }) {
   if (!open) return null
 
   const whatsappMessage = encodeURIComponent(
-    "Hi Exclusive Group, I'd like to book a consultation. Please let me know your next available time.",
+    "Hi Exclusive Group, I'd like to book a handyman. Please let me know your next available time.",
   )
-  const emailSubject = encodeURIComponent('Exclusive Group — Consultation Booking Request')
+  const emailSubject = encodeURIComponent('Exclusive Group — Handyman Booking Request')
   const emailBody = encodeURIComponent(
-    "Hi Exclusive Group,\n\nI'd like to book a consultation. Please contact me with your next available time.\n\nName:\nPhone:\nArea of interest:\nPreferred date/time:\n\nThank you.",
+    "Hi Exclusive Group,\n\nI'd like to book a handyman.\n\nName:\nPhone:\nProperty location:\nService needed:\nPreferred date/time:\n\nThank you.",
   )
 
   return (
@@ -179,9 +179,9 @@ function BookingModal({ open, onClose }) {
         onMouseDown={(event) => event.stopPropagation()}
       >
         <button className="booking-modal-close" type="button" onClick={onClose} aria-label="Close booking options">×</button>
-        <span className="kicker kicker-gold">Book with Exclusive Group</span>
+        <span className="kicker kicker-gold">Book a Handyman</span>
         <h2 id="booking-modal-title">How would you like to book?</h2>
-        <p>Choose the channel that suits you and we'll continue the booking conversation there.</p>
+        <p>Choose WhatsApp or email and tell us what maintenance or repair work you need help with.</p>
         <div className="booking-options">
           <a
             className="booking-option booking-option-whatsapp"
@@ -190,7 +190,7 @@ function BookingModal({ open, onClose }) {
             rel="noreferrer"
           >
             <span className="booking-option-icon"><WhatsAppIcon /></span>
-            <span><small>Fastest option</small><strong>Book via WhatsApp</strong><em>+27 50 213 9159</em></span>
+            <span><small>Fastest option</small><strong>Book a handyman via WhatsApp</strong><em>+27 50 213 9159</em></span>
             <ArrowIcon />
           </a>
           <a
@@ -198,7 +198,7 @@ function BookingModal({ open, onClose }) {
             href={`mailto:info@xclsvgroup.co.za?subject=${emailSubject}&body=${emailBody}`}
           >
             <span className="booking-option-icon"><MailIcon /></span>
-            <span><small>Email booking</small><strong>Book via Email</strong><em>info@xclsvgroup.co.za</em></span>
+            <span><small>Email booking</small><strong>Book a handyman via Email</strong><em>info@xclsvgroup.co.za</em></span>
             <ArrowIcon />
           </a>
         </div>
@@ -340,6 +340,80 @@ function usePageSeo(path) {
   }, [path])
 }
 
+
+function HandymanBookingStyles() {
+  return (
+    <style>{`
+      .handyman-booking-float {
+        position: fixed;
+        right: 28px;
+        bottom: 108px;
+        z-index: 1200;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 52px;
+        padding: 0 18px 0 12px;
+        border: 1px solid rgba(255, 197, 51, 0.32);
+        border-radius: 999px;
+        background: #0f1b2d;
+        color: #ffffff;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .handyman-booking-float:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 197, 51, 0.72);
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
+      }
+
+      .handyman-booking-float-icon {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 34px;
+        border-radius: 50%;
+        background: #e8ad2b;
+        color: #08111e;
+      }
+
+      .handyman-booking-float-icon svg {
+        width: 18px;
+        height: 18px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      @media (max-width: 720px) {
+        .handyman-booking-float {
+          right: 18px;
+          bottom: 98px;
+          min-height: 48px;
+          padding: 0 14px 0 9px;
+          font-size: 12px;
+        }
+
+        .handyman-booking-float-icon {
+          width: 32px;
+          height: 32px;
+          flex-basis: 32px;
+        }
+      }
+    `}</style>
+  )
+}
+
 function Header() {
   const [open, setOpen] = useState(false)
   const [maintenanceOpen, setMaintenanceOpen] = useState(false)
@@ -476,6 +550,18 @@ function Header() {
           </nav>
         </div>
       </header>
+
+      <button
+        className="handyman-booking-float"
+        type="button"
+        onClick={() => setBookingOpen(true)}
+        aria-label="Book a handyman"
+        title="Book a handyman"
+      >
+        <span className="handyman-booking-float-icon"><ToolsIcon /></span>
+        <span>Book a Handyman</span>
+      </button>
+
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </>
   )
@@ -1342,7 +1428,7 @@ function Footer() {
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© 2026 XCLSV GROUP Pty Ltd.</span>
+        <span>© 2026 Exclusive Group Pty Ltd.</span>
         <div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top ↑</a></div>
       </div>
     </footer>
@@ -2955,6 +3041,7 @@ export default function App() {
 
   return (
     <>
+      <HandymanBookingStyles />
       <Header />
       {page}
       <Footer />
