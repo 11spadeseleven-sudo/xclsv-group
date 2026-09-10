@@ -295,7 +295,7 @@ svg {
 .hero h1 {
   max-width: 670px;
   margin-top: 24px;
-  font-size: clamp(58px, 5.8vw, 91px);
+  font-size: clamp(58px, 4.8vw, 91px);
   font-weight: 700;
 }
 

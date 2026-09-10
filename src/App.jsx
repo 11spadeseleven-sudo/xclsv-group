@@ -58,6 +58,7 @@ const WhatsAppIcon = () => (
 const imagery = {
   hero: 'https://venkoproperty.co.nz/images/venko/blog/Tenant-Communication-Property-Management-Auckland.webp',
   showcase: 'https://images.pexels.com/photos/28586202/pexels-photo-28586202.jpeg?auto=compress&cs=tinysrgb&w=1800',
+  heroMaintenanceVideo: 'https://videos.pexels.com/video-files/7647713/7647713-uhd_3840_2160_24fps.mp4',
   showcaseVideo: 'https://videos.pexels.com/video-files/37544730/15908990_1920_1080_30fps.mp4',
   partnership: 'https://lirp.cdn-website.com/12cc6e78/dms3rep/multi/opt/f1388a6e-3efe-4b12-9b41-48badcdaf4d1-1920w.jpg',
   project: 'https://images.pexels.com/photos/29197533/pexels-photo-29197533.jpeg?auto=compress&cs=tinysrgb&w=1600',
@@ -212,12 +213,12 @@ const SEO_DEFAULT_IMAGE = `${SEO_SITE_URL}/assets/xclsv-logo.png`
 
 const seoPages = {
   '/': {
-    title: 'Exclusive Group | Property Management & Maintenance Services',
-    description: 'Exclusive Group provides property management, maintenance and project support that helps residential and commercial properties stay functional, presentable and protected in South Africa.',
+    title: 'Exclusive Group | Property Maintenance Services',
+    description: 'Exclusive Group provides property maintenance and project support that helps residential and commercial properties stay functional, presentable and protected in South Africa.',
   },
   '/contact': {
-    title: 'Contact Exclusive Group | Property Management & Maintenance',
-    description: 'Contact Exclusive Group for property management, maintenance services, project support or general property enquiries in South Africa.',
+    title: 'Contact Exclusive Group | Property Maintenance Services',
+    description: 'Contact Exclusive Group for property maintenance services, project support or general property enquiries in South Africa.',
   },
   '/property-maintenance': {
     title: 'Property Maintenance Services | Exclusive Group',
@@ -334,6 +335,7 @@ function usePageSeo(path) {
 function Header() {
   const [open, setOpen] = useState(false)
   const [maintenanceOpen, setMaintenanceOpen] = useState(false)
+  const [constructionOpen, setConstructionOpen] = useState(false)
   const [bookingOpen, setBookingOpen] = useState(false)
 
   // Get current path for active state
@@ -403,7 +405,6 @@ function Header() {
               </button>
 
               <div className="dropdown-panel">
-                <a href="/#partnership">Property Partnership</a>
                 <a href="/property-maintenance/plumbing" className={path === '/property-maintenance/plumbing' ? 'active' : ''}>Plumbing</a>
                 <a href="/property-maintenance/tiling" className={path === '/property-maintenance/tiling' ? 'active' : ''}>Tiling</a>
                 <a href="/property-maintenance/painting" className={path === '/property-maintenance/painting' ? 'active' : ''}>Painting</a>
@@ -413,7 +414,25 @@ function Header() {
 
             <a href="/business-investments" className={isActive('/business-investments') ? 'active' : ''}>Business Investments</a>
             <a href="/business-management" className={isActive('/business-management') ? 'active' : ''}>Business Management</a>
-            <a href="/project-management" className={isActive('/project-management') ? 'active' : ''}>Project Management</a>
+
+            <div
+              className={`nav-dropdown ${constructionOpen ? 'is-open' : ''}`}
+              onMouseEnter={() => setConstructionOpen(true)}
+              onMouseLeave={() => setConstructionOpen(false)}
+            >
+              <button
+                type="button"
+                className={path === '/project-management' ? 'active' : ''}
+                onClick={() => setConstructionOpen((value) => !value)}
+              >
+                Construction <ChevronIcon />
+              </button>
+
+              <div className="dropdown-panel">
+                <a href="/project-management" className={path === '/project-management' ? 'active' : ''}>Project Management</a>
+              </div>
+            </div>
+
             <a href="/real-estates" className={isActive('/real-estates') ? 'active' : ''}>Real Estates</a>
             <a href="/events" className={isActive('/events') ? 'active' : ''}>Events</a>
             <a href="/catering-services" className={isActive('/catering-services') ? 'active' : ''}>Catering Services</a>
@@ -441,37 +460,37 @@ function Hero() {
         aria-hidden="true"
         disablePictureInPicture
       >
-        <source src={imagery.showcaseVideo} type="video/mp4" />
+        <source src={imagery.heroMaintenanceVideo} type="video/mp4" />
       </video>
       <div className="hero-background-overlay" aria-hidden="true" />
 
       <div className="shell hero-grid">
         <div className="hero-copy">
-          <div className="eyebrow"><span /> Property management. Built around the asset.</div>
+          <div className="eyebrow"><span /> Property maintenance. Built around the asset.</div>
           <h1>
             We maintain. We improve. We add value.
           </h1>
           <p>
-            Exclusive Group brings property management, maintenance capability and project delivery into one connected service — helping owners keep properties functional, presentable, protected and performing at their best.
+            Exclusive Group brings property maintenance capability and project delivery into one connected service — helping owners keep properties functional, presentable, protected and performing at their best.
           </p>
 
           <div className="hero-actions">
-            <a className="button button-gold" href="#partnership">Explore Property Management <ArrowIcon /></a>
+            <a className="button button-gold" href="#maintenance">Explore Property Maintenance <ArrowIcon /></a>
             <a className="button button-ghost" href="#about">Discover Exclusive Group</a>
           </div>
 
           <div className="hero-proof">
             <div>
               <strong>01</strong>
-              <span>Property management</span>
+              <span>Property Maintenance</span>
             </div>
             <div>
               <strong>02</strong>
-              <span>Maintenance & repairs</span>
+              <span>Handyman Services</span>
             </div>
             <div>
               <strong>03</strong>
-              <span>Project coordination</span>
+              <span>Project Management</span>
             </div>
           </div>
         </div>
@@ -485,7 +504,7 @@ function Hero() {
             />
             <div className="visual-overlay" />
             <div className="visual-label">
-              <span>Property Management</span>
+              <span>Property Maintenance</span>
               <strong>Maintain. Improve. Protect.</strong>
             </div>
           </div>
@@ -1025,16 +1044,16 @@ function About() {
       <div className="shell about-grid">
         <div className="section-heading">
           <span className="kicker">The Exclusive Group approach</span>
-          <h2>Property management first. <span>Everything supports the asset.</span></h2>
+          <h2>Property maintenance first. <span>Everything supports the asset.</span></h2>
         </div>
         <div className="about-copy">
           <p className="lead">
-            Exclusive Group is centred on managing and maintaining property well — combining day-to-day property care, practical maintenance and coordinated project support to protect and improve each asset.
+            Exclusive Group is centred on maintaining and improving property well — combining day-to-day property care, practical maintenance and coordinated project support to protect and improve each asset.
           </p>
           <p>
             That gives the Group one clear story: understand what a property needs, coordinate the right work, maintain it professionally and protect value for owners, clients and communities.
           </p>
-          <a className="text-link" href="#partnership">How our property management approach works <ArrowIcon /></a>
+          <a className="text-link" href="#maintenance-approach">How our property maintenance approach works <ArrowIcon /></a>
         </div>
       </div>
 
@@ -1043,19 +1062,19 @@ function About() {
           <span className="pillar-icon"><BuildingIcon /></span>
           <div>
             <span className="pillar-number">01</span>
-            <h3>Property Management</h3>
-            <p>Practical oversight, maintenance coordination and improvement support focused on protecting property value.</p>
+            <h3>Property Maintenance</h3>
+            <p>Ongoing property care, repairs, upkeep and improvement support for residential and commercial properties.</p>
           </div>
-          <a href="#partnership" aria-label="Explore property partnership"><ArrowIcon /></a>
+          <a href="#maintenance" aria-label="Explore handyman services"><ArrowIcon /></a>
         </article>
         <article className="pillar">
           <span className="pillar-icon"><ToolsIcon /></span>
           <div>
             <span className="pillar-number">02</span>
-            <h3>Property Maintenance</h3>
-            <p>Reliable repairs and trade services that keep residential and commercial properties functional, presentable and protected.</p>
+            <h3>Handyman Services</h3>
+            <p>Practical hands-on support for plumbing, tiling, painting, welding and general property repairs.</p>
           </div>
-          <a href="#maintenance" aria-label="Explore property maintenance"><ArrowIcon /></a>
+          <a href="#maintenance" aria-label="Explore handyman services"><ArrowIcon /></a>
         </article>
         <article className="pillar">
           <span className="pillar-icon"><ProjectIcon /></span>
@@ -1093,29 +1112,29 @@ function About() {
         <div className="property-showcase-shade" />
         <div className="property-showcase-copy">
           <span>Property at the centre</span>
-          <strong>Management. Maintenance. Long-term value.</strong>
+          <strong>Maintenance. Repairs. Long-term value.</strong>
         </div>
       </div>
     </section>
   )
 }
 
-function Partnership() {
+function MaintenanceApproach() {
   return (
-    <section className="section partnership" id="partnership">
+    <section className="section partnership" id="maintenance-approach">
       <div className="shell partnership-intro">
         <div>
-          <span className="kicker kicker-gold">Property management</span>
+          <span className="kicker kicker-gold">Property maintenance</span>
           <h2>Look after the property. <span>Protect the value.</span></h2>
         </div>
         <p>
-          Exclusive Group's property management approach is about understanding what each residential or commercial property needs, coordinating the right maintenance and improvement work, and keeping the asset well managed over the long term.
+          Exclusive Group's property maintenance approach is about understanding what each residential or commercial property needs, coordinating the right repairs and improvement work, and keeping the asset in good condition over the long term.
         </p>
       </div>
 
       <div className="shell partnership-grid">
         <div className="partnership-image">
-          <img src={imagery.partnership} alt="Property management professionals reviewing a residential property together" loading="lazy" />
+          <img src={imagery.partnership} alt="Property maintenance professionals reviewing a residential property together" loading="lazy" />
           <div className="partnership-image-copy">
             <span>Practical property care</span>
             <strong>Assess. Maintain. Improve. Protect.</strong>
@@ -1240,7 +1259,7 @@ function CTA() {
       <div className="shell cta-card">
         <div>
           <span className="kicker">Start a conversation</span>
-          <h2>Need a property management and maintenance team that can help deliver?</h2>
+          <h2>Need a property maintenance team that can help deliver?</h2>
         </div>
         <div className="cta-actions">
           <a className="button button-dark" href="tel:+27603156018">+27 50 213 9159 <ArrowIcon /></a>
@@ -1258,7 +1277,7 @@ function Footer() {
         <div className="footer-brand">
           <img src="/assets/xclsv-logo.png" alt="Exclusive Group" />
           <p>
-            Property management, property maintenance and project delivery built around protecting long-term value.
+            Property maintenance and project delivery built around protecting long-term value.
           </p>
           <span>CREATING EMPLOYMENT AND GIVING BACK</span>
         </div>
@@ -1266,7 +1285,7 @@ function Footer() {
         <div>
           <h4>Company</h4>
           <a href="/#about">About Us</a>
-          <a href="/#partnership">Property Management</a>
+          <a href="/#maintenance">Property Maintenance</a>
           <a href="/#projects">Project Management</a>
           <a href="/contact">Contact Us</a>
         </div>
@@ -1287,7 +1306,7 @@ function Footer() {
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© 2026 Exclusive Group Pty Ltd.</span>
+        <span>© 2026 XCLSV GROUP Pty Ltd.</span>
         <div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="#top">Back to top ↑</a></div>
       </div>
     </footer>
@@ -1316,7 +1335,7 @@ function ContactPage() {
     name: '',
     email: '',
     phone: '',
-    interest: 'Property Management',
+    interest: 'Property Maintenance',
     message: '',
   })
   const [submitting, setSubmitting] = useState(false)
@@ -1376,7 +1395,7 @@ function ContactPage() {
       name: '',
       email: '',
       phone: '',
-      interest: 'Property Management',
+      interest: 'Property Maintenance',
       message: '',
     })
 
@@ -1407,7 +1426,7 @@ function ContactPage() {
             <span className="kicker kicker-gold">Contact Exclusive Group</span>
             <h1>Let's build value <span>together.</span></h1>
             <p>
-              Whether you need ongoing property management, maintenance support or a project that needs coordinated delivery, start the conversation with us.
+              Whether you need ongoing property maintenance support or a project that needs coordinated delivery, start the conversation with us.
             </p>
           </div>
 
@@ -1441,13 +1460,13 @@ function ContactPage() {
             <div className="contact-paths">
               <article>
                 <span>01</span>
-                <h3>Property Management</h3>
-                <p>Discuss ongoing property care, maintenance coordination, improvements and long-term asset value.</p>
+                <h3>Property Maintenance</h3>
+                <p>Discuss ongoing property care, repairs, upkeep, improvements and long-term property value.</p>
               </article>
               <article>
                 <span>02</span>
-                <h3>Property Maintenance</h3>
-                <p>Plumbing, painting, tiling, welding and practical property improvement support.</p>
+                <h3>Handyman Services</h3>
+                <p>Plumbing, tiling, painting, welding and practical day-to-day repair support.</p>
               </article>
               <article>
                 <span>03</span>
@@ -1484,13 +1503,19 @@ function ContactPage() {
                 <label>
                   <span>I'm interested in</span>
                   <select name="interest" value={form.interest} onChange={updateField}>
-                    <option>Property Management</option>
                     <option>Property Maintenance</option>
+                    <option>Handyman Services</option>
                     <option>Plumbing</option>
-                    <option>Painting</option>
                     <option>Tiling</option>
+                    <option>Painting</option>
                     <option>Welding</option>
+                    <option>Business Investments</option>
+                    <option>Business Management</option>
+                    <option>Construction</option>
                     <option>Project Management</option>
+                    <option>Real Estates</option>
+                    <option>Events</option>
+                    <option>Catering Services</option>
                     <option>General Enquiry</option>
                   </select>
                 </label>
@@ -1560,7 +1585,7 @@ function MaintenanceOverviewPage() {
             <span className="kicker kicker-gold">Property Maintenance</span>
             <h1>Protect the property. <span>Preserve the value.</span></h1>
             <p>
-              Exclusive Group's maintenance capability supports residential and commercial properties with practical trades, repairs and improvement work — all under one property management and maintenance-focused brand.
+              Exclusive Group's maintenance capability supports residential and commercial properties with practical trades, repairs and improvement work — all under one property maintenance-focused brand.
             </p>
             <div className="maintenance-page-hero-actions">
               <a className="button button-gold" href="/contact">Request maintenance support <ArrowIcon /></a>
@@ -2222,7 +2247,7 @@ function LegalPage({ type }) {
         <>
           <p>
             Exclusive Group Pty Ltd ("Exclusive Group", "we", "us" or "our") operates this website and provides
-            property management, property maintenance and project management services in South Africa.
+            property maintenance and project management services in South Africa.
           </p>
           <p>
             For privacy-related questions, requests or complaints, contact us at
@@ -2239,7 +2264,7 @@ function LegalPage({ type }) {
           <ul>
             <li>Your name and contact details, including email address and phone number.</li>
             <li>Information you submit through enquiry, booking or review forms.</li>
-            <li>The nature of the property, management, maintenance or project enquiry you contact us about.</li>
+            <li>The nature of the property maintenance, construction, business or project enquiry you contact us about.</li>
             <li>Basic technical information such as browser, device and website usage data where analytics or security tools are enabled.</li>
           </ul>
         </>
@@ -2252,7 +2277,7 @@ function LegalPage({ type }) {
           <p>We may use personal information to:</p>
           <ul>
             <li>Respond to enquiries, bookings and requests for quotations.</li>
-            <li>Assess and discuss property management, maintenance or project requirements.</li>
+            <li>Assess and discuss property maintenance, construction, business or project requirements.</li>
             <li>Provide and improve our property maintenance and project services.</li>
             <li>Moderate and, where approved, publish customer reviews.</li>
             <li>Maintain website security, prevent abuse and improve the website experience.</li>
@@ -2362,24 +2387,24 @@ function LegalPage({ type }) {
       title: '2. Website information',
       body: (
         <p>
-          Website content is provided for general information about Exclusive Group, its property management services,
-          property maintenance capabilities and project management services. We aim to keep information accurate and
+          Website content is provided for general information about Exclusive Group, its property maintenance capabilities,
+          construction, business and project management services. We aim to keep information accurate and
           current, but we do not warrant that every description, image, price indication, availability statement or
           other item is complete, error-free or suitable for every circumstance.
         </p>
       ),
     },
     {
-      title: '3. Property management information',
+      title: '3. Property maintenance information',
       body: (
         <>
           <p>
-            Content relating to property management, maintenance planning, improvement work or project coordination is
+            Content relating to property maintenance, maintenance planning, improvement work or project coordination is
             introductory and informational. Final scope, responsibilities, pricing and service arrangements are
             confirmed separately with the relevant client.
           </p>
           <p>
-            Any property management, maintenance or project engagement is subject to further discussion, site or scope
+            Any property maintenance, construction or project engagement is subject to further discussion, site or scope
             assessment where required, commercial agreement and the relevant written quotation, work order or contract.
           </p>
         </>
@@ -2630,7 +2655,7 @@ export default function App() {
         <Hero />
         <Reviews />
         <About />
-        <Partnership />
+        <MaintenanceApproach />
         <Maintenance />
         <Projects />
         <Impact />
