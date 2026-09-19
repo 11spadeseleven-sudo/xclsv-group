@@ -252,10 +252,6 @@ const seoPages = {
     title: 'Business Investments | Exclusive Group',
     description: 'Explore business investment opportunities and growth-focused support from Exclusive Group.',
   },
-  '/business-management': {
-    title: 'Business Management | Exclusive Group',
-    description: 'Practical business management support focused on organisation, coordination and sustainable growth.',
-  },
   '/construction': {
     title: 'Construction | Exclusive Group',
     description: 'Construction planning, coordination, property improvements and project delivery support from Exclusive Group.',
@@ -418,7 +414,6 @@ function Header() {
   const [open, setOpen] = useState(false)
   const [maintenanceOpen, setMaintenanceOpen] = useState(false)
   const [constructionOpen, setConstructionOpen] = useState(false)
-  const [realEstatesOpen, setRealEstatesOpen] = useState(false)
   const [bookingOpen, setBookingOpen] = useState(false)
 
   // Get current path for active state
@@ -506,7 +501,7 @@ function Header() {
             </div>
 
             <a href="/business-investments" className={isActive('/business-investments') ? 'active' : ''}>Business Investments</a>
-            <a href="/business-management" className={isActive('/business-management') ? 'active' : ''}>Business Management</a>
+            <a href="/property-partnership" className={isActive('/property-partnership') ? 'active' : ''}>Property Partnership</a>
 
             <div
               className={`nav-dropdown ${constructionOpen ? 'is-open' : ''}`}
@@ -526,23 +521,7 @@ function Header() {
               </div>
             </div>
 
-            <div
-              className={`nav-dropdown ${realEstatesOpen ? 'is-open' : ''}`}
-              onMouseEnter={() => setRealEstatesOpen(true)}
-              onMouseLeave={() => setRealEstatesOpen(false)}
-            >
-              <button
-                type="button"
-                className={path === '/real-estates' || path === '/property-partnership' ? 'active' : ''}
-                onClick={() => handleDropdownParentClick('/real-estates', realEstatesOpen, setRealEstatesOpen)}
-              >
-                Real Estates <ChevronIcon />
-              </button>
-
-              <div className="dropdown-panel">
-                <a href="/property-partnership" className={path === '/property-partnership' ? 'active' : ''}>Property Partnership</a>
-              </div>
-            </div>
+            <a href="/real-estates" className={isActive('/real-estates') ? 'active' : ''}>Real Estates</a>
             <a href="/events" className={isActive('/events') ? 'active' : ''}>Events</a>
             <a href="/catering-services" className={isActive('/catering-services') ? 'active' : ''}>Catering Services</a>
 
@@ -1632,7 +1611,6 @@ function ContactPage() {
                     <option>Painting</option>
                     <option>Welding</option>
                     <option>Business Investments</option>
-                    <option>Business Management</option>
                     <option>Construction</option>
                     <option>Project Management</option>
                     <option>Real Estates</option>
